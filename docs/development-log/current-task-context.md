@@ -1,117 +1,23 @@
 # Current Task Context
 
-## Project
+## Project and authority
 
-Trust-Bounded Agent OS (TBAO)
+Trust-Bounded Collaboration — canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-## Current Stage
+Current task: [v1.0 Phase 1 — Multi-Agent Fork/PR Collaboration Baseline (#23)](https://github.com/andrew199799/trust-bounded-collaboration/issues/23), under [umbrella #22](https://github.com/andrew199799/trust-bounded-collaboration/issues/22). Read the current Issue body and applicable Human comments before acting; this file is continuity context, not additional authority.
 
-v0.1 public draft.
+## Scope
 
-The repository currently defines TBAO as a conceptual framework, governance spine, mock-only static demo, and local-only mock Action Policy Kernel v0.1. It is not production-ready and must not be treated as a runtime for real systems.
+- Establish native Git/GitHub collaboration: canonical read/fetch → isolated Agent workspace → contributor fork branch → canonical Draft PR → Human review.
+- Keep the execution contract vendor-neutral and the contributor path familiar. Apply the public artifact rule and bounded hygiene to directly touched current-facing docs.
+- Start each Agent/task from exact current canonical `main` in an isolated workspace. Verify API/transport identity, fork parent, remote roles, and permissions before mutation.
+- Add a custom guard only if evidence shows native permissions and documentation are insufficient. Canonical read-only permission is sufficient denial evidence; no dangerous write probe is required.
+- Phase 1 authorizes one executing Agent fork if needed and exactly one canonical Draft PR. Use the PR for intermediate progress and the Issue for the final sanitized checkpoint.
 
-## Current Phase
+## Boundaries and validation
 
-Post-Action Policy Kernel v0.1 documentation alignment.
+No direct canonical push, permission changes, merge, tag, release, private-source copying, broad v1 implementation, or repository-wide historical rewrite. Every GitHub artifact must be assumed public before writing; follow [AGENTS.md](../../AGENTS.md) and [CONTRIBUTING.md](../../CONTRIBUTING.md).
 
-## Current Objective
+The existing v0.1 reference remains local-only, mock-only, non-executing, and not production-ready, with no real credentials, funds, or external side effects.
 
-Align the remaining project documentation after PR #19 was merged.
-
-README.md was already updated directly on `main` after PR #19. This PR aligns remaining docs only and intentionally does not modify README.md.
-
-## Scope Boundary
-
-This PR is docs-only.
-
-Allowed files:
-
-```text
-docs/roadmap.md
-docs/action-spine-mvp.zh-en.md
-docs/glossary.zh-en.md
-docs/release-notes/v0.1-action-policy-kernel.md
-docs/development-log/current-task-context.md
-docs/development-log/current-task-status.md
-```
-
-Do not modify:
-
-```text
-README.md
-AGENTS.md
-src/
-tests/
-configs/
-examples/
-package/build files
-runtime files
-```
-
-Preserve the TBAO v0.1 safety boundary:
-
-```text
-local-only
-mock-only
-non-executing
-no real credentials
-no real funds
-no real external side effects
-```
-
-## Current Non-Goals
-
-- No README change.
-- No source code change.
-- No tests, configs, or examples change.
-- No runtime.
-- No API.
-- No scheduler.
-- No worker.
-- No live integration.
-- No credentials.
-- No real file writes or deletion.
-- No real funds, payments, trades, or email sending.
-- No production-readiness claim.
-- No expansion into PET/KET, education product, OKX, trading, health, legal, personal-data runtime, or other scenario work.
-
-## Responsibilities
-
-Human:
-
-- Owns final meaning, priorities, approvals, and scope boundaries.
-- Confirms when a task may create side effects or move beyond documentation alignment.
-
-ChatGPT:
-
-- Helps keep project framing aligned with TBAO doctrine and non-goals.
-- Should avoid turning narrow documentation alignment into broad governance essays.
-
-Codex:
-
-- Reads `current-task-context.md` first for continuity.
-- Avoids full-repository scans by default.
-- Reads only the files needed for the current task.
-- Makes narrow, reviewable docs-only changes.
-- Does not create evidence reports except at phase end.
-- Does not add runtime, scheduler, worker, API, key, plugin activation, or execution-capable behavior.
-
-## Validation Commands
-
-Run:
-
-```sh
-git status --short
-git diff --name-only main...HEAD
-grep -R "production-ready" -n README.md docs AGENTS.md src tests configs examples || true
-grep -R "real credentials\|real funds\|external side effects" -n README.md docs AGENTS.md src tests configs examples || true
-grep -R "requests\|httpx\|urllib\|smtplib\|boto3\|openai\|okx\|binance" -n src tests configs examples || true
-```
-
-Expected result:
-
-- Changed files are docs-only.
-- README.md is not changed in this PR.
-- `src/`, `tests/`, `configs/`, and `examples/` are not changed.
-- No production-readiness claim is introduced.
-- No runtime or execution capability is introduced.
+Run `python3 -m pytest -q` and `git diff --check`. Verify the PR base/head repository, branch, and exact SHA; test updates only on the contributor branch. Record available CI results accurately, including when no workflow exists. Human maintainers retain final merge/release authority.
