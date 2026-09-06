@@ -16,7 +16,7 @@ These rules apply equally to Codex, OpenClaw, Claude Code, and future compatible
 - Normal Agent writes go to a task branch in its contributor fork. Do not push branches, tags, deletions, or force updates to canonical.
 - Normal Agent credentials should have canonical read access without write/admin authority. Report any permission cutover to the Human; do not change permissions or escalate authority yourself.
 - A canonical Pull Request is a proposal. Human maintainers own merge and release decisions. No Agent self-merge, self-release, or self-tag; no auto-merge activation.
-- Keep PRs small, scoped, and reviewable. Follow the task's tighter PR limit within the maximum of four PRs per phase. Use the PR body for intermediate status and create final evidence only at phase end.
+- Keep PRs small, scoped, and reviewable. Follow any explicit task-specific PR limit. Use the PR body for intermediate status and create final evidence only at phase end.
 - Run relevant tests and `git diff --check`. Verify the canonical PR base, contributor head repository/branch, and exact head SHA after publishing or updating a proposal.
 - Ordinary implementation, test, and debugging failures remain Agent-owned inside authorized scope. Interrupt the Human only for material authority, product meaning, architecture, security/privacy, or release/consequence changes; stop only the affected transition.
 
