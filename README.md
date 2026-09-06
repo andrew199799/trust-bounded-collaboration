@@ -1,4 +1,6 @@
-# Trust-Bounded Agent OS (TBAO)
+# Trust-Bounded Collaboration
+
+Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration). For the fork → branch → test → PR workflow, see [CONTRIBUTING.md](CONTRIBUTING.md). The v0.1 reference described below retains its historical TBAO name.
 
 Trust-Bounded Agent OS is a public framework and local mock prototype for making AI agent actions inspectable, bounded, confirmable, and auditable before execution.
 
@@ -42,11 +44,11 @@ The project keeps its ambition clear: help AI systems mature toward bounded, rev
 ## Project Value
 
 - Gives developers a shared language for discussing agent action boundaries before implementation.
-- Separates public framework discussion from protected real implementation work in `Twin-Brain-Agent-OS`.
+- Keeps public examples self-contained, without depending on private implementations.
 - Shows how intent, proposed action, risk, confirmation, execution status, and audit notes can be inspected before action.
 - Adds a local mock policy kernel that makes risk classification, approval gating, and ledger recording testable without enabling real-world execution.
 - Helps researchers and builders discuss trust-bounded agent governance without pretending a runtime exists.
-- Creates a safe public entry point for contributors while protecting proprietary product work.
+- Gives contributors a public entry point for small, reviewable improvements.
 - Keeps human meaning sovereignty and controlled agent power at the center.
 
 ## Core Idea
@@ -126,9 +128,12 @@ No production runtime exists. No live API integration, scheduler, worker, creden
 - [`docs/non-goals.zh-en.md`](docs/non-goals.zh-en.md): explicit non-goals and scope limits.
 - [`docs/development-log/action-spine-static-mock-example.md`](docs/development-log/action-spine-static-mock-example.md): static mock proposal example.
 - [`docs/development-log/phase-1-release-note.md`](docs/development-log/phase-1-release-note.md): Phase 1 collaboration baseline summary.
-- [`AGENTS.md`](AGENTS.md): Codex collaboration and scope-control baseline.
+- [`AGENTS.md`](AGENTS.md): vendor-neutral AI Agent execution contract.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): public fork, branch, test, and PR guide.
 
-## Roadmap Snapshot
+## Historical v0.1 Roadmap Snapshot
+
+Current collaboration work is tracked in [Issue #23](https://github.com/andrew199799/trust-bounded-collaboration/issues/23), under [Issue #22](https://github.com/andrew199799/trust-bounded-collaboration/issues/22). The phases below describe the earlier v0.1 work.
 
 - **Phase 1:** completed collaboration baseline and static mock.
 - **Phase 2:** public narrative and README framing.
