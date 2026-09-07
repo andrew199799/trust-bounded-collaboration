@@ -1,8 +1,9 @@
 # Security reporting
 
-The current `main` is an unreleased development foundation (`1.0.0a1`). There are
-no tagged releases with a maintenance/support commitment yet. Please identify the
-exact commit or package version when reporting a concern.
+The repository contract is prepared for `1.0.0`; tag, GitHub Release and package
+publication remain pending Human release authorization. There are no tagged releases
+with a maintenance/support commitment yet. Please identify the exact commit or
+package version when reporting a concern.
 
 ## Arrange a private channel first
 

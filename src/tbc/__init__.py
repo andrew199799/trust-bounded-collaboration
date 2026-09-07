@@ -3,4 +3,4 @@ from ._core import action_digest, dumps_receipt, evaluate, load_request
 from ._json import InputError
 
 __all__ = ["load_request", "action_digest", "evaluate", "dumps_receipt", "InputError"]
-__version__ = "1.0.0a1"
+__version__ = "1.0.0"

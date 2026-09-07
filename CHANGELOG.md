@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 — unreleased candidate
 
-Development metadata is `1.0.0a1`. This section records the merged foundation;
-it does not announce a tagged release or package publication.
+The repository contract is prepared for `1.0.0`. Tag, GitHub Release and package
+publication remain pending Human release authorization; this is not a release announcement.
 
 - Four-function Python API: request validation, exact action digest, pure scoped
   evaluation and deterministic unsigned receipt serialization.
@@ -19,8 +19,10 @@ it does not announce a tagged release or package publication.
   dependencies and exclusion of the historical `tbao` implementation.
 - Wheel/sdist metadata assertions for Python `>=3.11,<3.15`; Python 3.11–3.14
   conformance, build and clean-install checks.
+- Separate English/Chinese READMEs, a Human/Host correction loop and a compact
+  capability map that keeps project policy and future extensions outside Core.
 - Public security-reporting and community-conduct guidance.
 
 Authentication, policy ownership, evidence verification, live repository
 observation/enforcement, execution and persistence remain host responsibilities.
-A final version, release notes and publication require a separate Human decision.
+Merge, tagging, GitHub Release and package publication require separate Human decisions.
