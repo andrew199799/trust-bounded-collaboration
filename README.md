@@ -34,6 +34,13 @@ proposal denied for stale binding, and independently allowed inspection. Expecte
 DENY cases count as a successful demo (exit 0). An unexpected result exits 1;
 invalid usage exits 2. CLI scope is help, version and this fixed example.
 
+## Runnable use cases
+
+The [examples guide](examples/README.md) covers repository authority,
+approval-bound consequential actions, evidence-bound transitions/releases, and a
+scoped blocker with independently authorized safe work. All four are synthetic,
+offline and non-executing; the guide separates current examples from legacy v0.1 material.
+
 ## Integrate the library
 
 Run the compact, synthetic [four-function example](examples/tbc_integration.py):
@@ -94,12 +101,12 @@ The local first-run target is under ten minutes; the check reports actual elapse
 ## Legacy and contribution
 
 `src/tbao/`, its tests and historical v0.1 docs remain reference/regression material;
-they are outside the new distribution and stable API. Start with the example above
+they are outside the new distribution and stable API. Start with the [current examples](examples/README.md)
 for the current library. No historical rewrite or compatibility migration is implied.
 
 Contribute through [fork → branch → test → PR](CONTRIBUTING.md). Human maintainers own
-merge/release/publication; AI Agents follow [AGENTS.md](AGENTS.md). Current release-readiness
-preparation is [Issue #29](https://github.com/andrew199799/trust-bounded-collaboration/issues/29).
+merge/release/publication; AI Agents follow [AGENTS.md](AGENTS.md). Current runnable use-case
+coverage is [Issue #31](https://github.com/andrew199799/trust-bounded-collaboration/issues/31).
 
 See [security reporting](SECURITY.md), [community conduct](CODE_OF_CONDUCT.md) and
 [unreleased changes](CHANGELOG.md). Built by Andrew with ChatGPT and Codex as AI
