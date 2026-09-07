@@ -1,40 +1,67 @@
 # Trust-Bounded Collaboration
 
-A small Python library for checking whether verified authority, policy and evidence
-apply to **one exact proposed action**.
+TBC is a lightweight, code-first foundation for keeping Human–AI collaboration in
+complex systems **bounded, observable and correctable**, even when models and Agents
+are imperfect.
 
 [简体中文](README.zh-CN.md)
 
+**AI does not have to be perfect. Collaboration needs boundaries.**
+
 ## Why TBC exists
 
-An Agent can have valid credentials, a Human approval and passing tests—and still
-be about to act on a different revision from the one approved. In Human–AI systems,
-capability, authorization, policy and evidence can drift apart as work changes.
-A successful check for yesterday's proposal should not silently authorize today's.
+Human–AI collaboration cannot assume perfect understanding or execution. Different
+models and Agents can misunderstand intent, hallucinate or behave differently as
+context, tools, environment, service quality and available compute change. Those
+uncertainties cannot be fully eliminated.
 
-TBC gives the adopting application (the **host**) a common evaluation step for
-Agent proposals, multi-agent work, CI gates, approval systems and release decisions:
+TBC's goal is to limit how far uncertainty and deviation can propagate into
+uncontrolled consequences. It gives Humans and the adopting application (the
+**host**) explicit checkpoints for reviewing proposed actions, stopping unsupported
+steps and trying again with revised facts or scope:
 
-- Bind the actor, Grant, Policy and required Evidence to the proposed action.
-- Deny missing, stale, mismatched or negative required facts, with explicit reasons.
-- Produce a reproducible receipt for review and debugging.
-- Evaluate unrelated authorized work independently when one transition is blocked.
+- **Bounded:** the host can hold a consequential step when its authorization or
+  required supporting facts are missing, stale, mismatched or negative.
+- **Observable:** reproducible receipts make evaluation decisions and denial reasons
+  inspectable; the Human/host still checks what is happening in the real system.
+- **Correctable:** Humans and host logic can revise a proposal, gather evidence or
+  re-scope work, then evaluate the next bounded action. Unrelated authorized work
+  can remain independently evaluable.
 
-It is useful when your host already knows how to verify facts and needs a small,
-testable contract for checking their bindings. Start with the runnable examples;
-no governance framework or Agent vendor is required.
+This applies to Agent proposals, multi-agent work, CI gates, approval systems and
+release decisions. TBC grew out of repeated real Human–AI engineering practice.
+Its public code, conformance tests and runnable examples define what the current
+implementation demonstrates; this is not a claim of universal validation or
+production guarantees.
 
-## How it works
+## Bounded collaboration and continuous correction
 
 ```mermaid
 flowchart TD
-    R["Proposed Request"] --> D["Exact action digest"]
-    D --> C["Host-verified Context: Actor, Grant, Policy, Evidence and time"]
-    R --> E["Pure evaluate(request, context=context)"]
-    C --> E
-    E --> O["ALLOW / DENY + unsigned deterministic receipt"]
-    O --> H["Host rechecks state and enforces the transition"]
+    H["Human intent"] --> P["AI / Agent proposes an action"]
+    P --> B["Host verifies and binds action, authority, policy and evidence"]
+    B --> E["TBC: pure evaluation"]
+    E --> R["ALLOW / DENY + unsigned deterministic receipt"]
+    R --> C["Human / Host rechecks reality"]
+    C --> A["Host acts only if ALLOW and rechecks pass"]
+    C --> V["Human / Host revises, gathers evidence or re-scopes"]
+    V --> P
+    A -->|Next proposal, if any| P
 ```
+
+Each pass is a bounded evaluation, not an autonomous correction engine. TBC
+provides the checkpoint and bindings; Human/host/project logic owns intent, fact
+verification, policy, correction choices and real enforcement. TBC does not
+correct an Agent automatically or dynamically rewrite policy. A revised proposal
+needs fresh evaluation; an earlier ALLOW is not a reusable execution token.
+
+## The 1.0 executable foundation
+
+Current 1.0 implements that checkpoint as a small Python library that checks
+whether verified authority, policy and evidence apply to **one exact proposed
+action**. For example, an Agent may have valid credentials, a Human approval and
+passing tests, but propose a different revision from the one approved. The earlier
+facts must not silently authorize that changed action.
 
 An action contains `actor`, `transition`, `resource` and a JSON-object `payload`.
 Include the revision and other details that matter to the decision in that action.
