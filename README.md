@@ -76,6 +76,16 @@ verification, policy, correction choices and real enforcement. TBC does not
 correct an Agent automatically or dynamically rewrite policy. A revised proposal
 needs fresh evaluation; an earlier ALLOW is not a reusable execution token.
 
+Do not confuse persistence with progress. Repeated non-convergence or oscillating
+fixes are a routing signal for Human/host/project logic: check for a task-definition
+mismatch (overbroad, ambiguous or conflicting scope/acceptance), a task-structure
+mismatch (distinct capabilities bundled into one task), or an Agent-capability
+mismatch (model, tooling or context poorly suited to the work). Check whether the
+work is still converging; if not, reframe or split it and tighten acceptance. If the
+mismatch persists, route it to a better-suited Agent instead of blindly retrying.
+These are Human/host correction choices: Core keeps no retry history, scores no
+Agent capability and does not automatically select another Agent.
+
 ## The 1.0 executable foundation
 
 Current 1.0 implements that checkpoint as a small Python library that checks
