@@ -1,4 +1,5 @@
 """Inspect built artifacts and measure a clean, offline wheel first run."""
+from email.parser import Parser
 import json
 import os
 from pathlib import Path
@@ -8,6 +9,13 @@ import tarfile
 import tempfile
 import time
 import zipfile
+
+
+def assert_python_range(metadata):
+    values = Parser().parsestr(metadata).get_all("Requires-Python", [])
+    assert len(values) == 1, "Exactly one Requires-Python header is required"
+    assert {part.strip() for part in values[0].split(",")} == {">=3.11", "<3.15"}, values[0]
+
 
 root = Path(__file__).resolve().parents[1]
 wheel, = (root / "dist").glob("*.whl")
@@ -20,12 +28,15 @@ with zipfile.ZipFile(wheel) as archive:
     assert archive.read(license_name) == (root / "LICENSE").read_bytes()
     metadata_name, = [n for n in names if n.endswith("/METADATA")]
     metadata = archive.read(metadata_name).decode()
+    assert_python_range(metadata)
     assert "License-Expression: MIT" in metadata
     assert "Requires-Dist:" not in metadata
 with tarfile.open(sdist) as archive:
     names = archive.getnames()
     assert not any("/tbao/" in n or "/docs/" in n or "/social/" in n for n in names)
     assert any(n.endswith("/src/tbc/__init__.py") for n in names)
+    metadata_name, = [n for n in names if n.split("/", 1)[-1] == "PKG-INFO"]
+    assert_python_range(archive.extractfile(metadata_name).read().decode())
 
 started = time.monotonic()
 with tempfile.TemporaryDirectory() as temp:
