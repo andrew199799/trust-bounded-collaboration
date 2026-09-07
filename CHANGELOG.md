@@ -11,7 +11,10 @@ it does not announce a tagged release or package publication.
   bound Policy. A blocked action does not change an independent evaluation.
 - Restricted UTF-8 JSON profile and domain-separated SHA-256 digests, with fixed
   golden tests and fail-closed malformed-input handling.
-- Credential-free offline repository demo and a compact host integration example.
+- Credential-free offline repository demo, approval-bound action, evidence-bound
+  transition/release and scoped-blocker examples, plus a compact integration snippet.
+- Current/legacy example routing and 127 contract/demo/legacy tests; shipped current
+  examples run against a clean offline wheel installation.
 - MIT distribution with a Human copyright notice, zero third-party runtime
   dependencies and exclusion of the historical `tbao` implementation.
 - Wheel/sdist metadata assertions for Python `>=3.11,<3.15`; Python 3.11–3.14

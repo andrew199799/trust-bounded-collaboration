@@ -35,12 +35,21 @@ with zipfile.ZipFile(wheel) as archive:
     assert_python_range(metadata)
     assert "License-Expression: MIT" in metadata
     assert "Requires-Dist:" not in metadata
+    assert Parser().parsestr(metadata)["Version"] == "1.0.0a1"
 source_examples = {}
 with tarfile.open(sdist) as archive:
     names = archive.getnames()
-    assert not any("/tbao/" in n or "/docs/" in n or "/social/" in n for n in names)
+    assert not any("/tbao/" in n or "/social/" in n for n in names)
     assert any(n.endswith("/src/tbc/__init__.py") for n in names)
     relative = {n.split("/", 1)[-1]: n for n in names}
+    # Admit only the current capability map, not the historical documentation tree.
+    assert {n for n in relative if n.startswith("docs/")} == {"docs/capability-disposition.md"}
+    for name in ("README.md", "README.zh-CN.md", "docs/capability-disposition.md"):
+        assert archive.extractfile(relative[name]).read() == (root / name).read_bytes()
+    for name, other in (("README.md", "README.zh-CN.md"), ("README.zh-CN.md", "README.md")):
+        readme = archive.extractfile(relative[name]).read().decode("utf-8")
+        assert "](" + other + ")" in readme
+        assert "`1.0.0a1`" in readme
     expected_examples = {"examples/README.md", *("examples/" + n for n in CURRENT_EXAMPLES)}
     assert {n for n in relative if n.startswith("examples/")} == expected_examples
     assert "tests/test_tbc_examples.py" in relative

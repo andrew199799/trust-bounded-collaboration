@@ -11,3 +11,5 @@ include examples/scoped_blocker.py
 include SECURITY.md
 include CODE_OF_CONDUCT.md
 include CHANGELOG.md
+include README.zh-CN.md
+include docs/capability-disposition.md

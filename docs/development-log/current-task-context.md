@@ -2,19 +2,22 @@
 
 Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-Phase 4 (#27, PR #28) and repository hygiene (#29, PR #30) are completed.
-Current task: [runnable use-case coverage (#31)](https://github.com/andrew199799/trust-bounded-collaboration/issues/31).
-The exact authorized canonical baseline is `715e6cd4ca65eefcbece7bb36afff70e6c5a8af7`.
-Read the latest Human instructions and task comments before acting.
+Foundation (#27, PR #28), repository hygiene (#29, PR #30) and runnable use-case
+coverage (#31, PR #32) are completed. Current task: [pre-freeze publication surface
+and capability disposition (#33)](https://github.com/andrew199799/trust-bounded-collaboration/issues/33).
+Exact authorized canonical baseline: `30e73d0d3d1c8fa660d80bdcd3d651d30f63dc75`.
+Read current Human instructions and Issue comments before acting.
 
-Preserve the repository-authority demo and add minimal approval-bound action,
-evidence-bound transition and scoped-blocker examples through the existing four
-functions. Keep examples synthetic, offline and credential-free; distinguish current
-examples from legacy v0.1 references. Validate contract tests, Python 3.11–3.14,
-wheel/sdist, clean installation and required canonical conformance checks.
+Improve external comprehension through an English README and a separate Chinese
+README, with lightweight language links, matching facts and an accurate Mermaid
+flow. Audit current public docs and classify adjacent capabilities without importing
+private source or expanding Core. Keep the capability disposition concise.
 
-Use one isolated workspace and exactly one canonical Draft PR from the Agent fork.
-Iterate ordinary implementation/test issues in that PR, then stop for Human review.
-No public API/schema/CLI expansion, runtime dependency, live execution, persistence,
-orchestrator, Chinese README, ruleset/permission changes, merge, tag, release or
-package publication is authorized. Do not copy private source.
+Use a fresh isolated workspace and exactly one canonical Draft PR from the Agent
+fork. Handle ordinary docs/test/build issues within that PR. Preserve Python
+3.11–3.14, 127 tests, wheel/sdist, clean offline installation/examples and required
+canonical checks at the exact head. Stop for Human / ChatGPT pre-freeze review.
+
+Public API, schemas, CLI, version `1.0.0a1`, MIT and runtime dependencies are frozen.
+No live integration, persistence, orchestration, ruleset/permission changes, merge,
+tag, release, package publication or private-source copying is authorized.
