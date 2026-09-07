@@ -34,6 +34,27 @@ Its public code, conformance tests and runnable examples define what the current
 implementation demonstrates; this is not a claim of universal validation or
 production guarantees.
 
+## Make collaboration drift observable
+
+A changed proposal, expired approval or missing check can otherwise remain hidden
+behind a simple “ready” status. TBC turns mismatches in the supplied facts into
+specific evaluation signals that a developer can use to locate the affected step.
+
+| Problem | Signal from current 1.0 | Typical Human/host response |
+| --- | --- | --- |
+| Action or revision changed, but approval still refers to the earlier proposal. | DENY with an action or policy binding mismatch. | Confirm the intended action and obtain verified authority, policy and evidence for that exact revision. |
+| Authority is missing or no longer current. | DENY with missing or not-current authority. | Obtain valid exact-action authorization; credentials alone do not fill the gap. |
+| Policy is stale, bound to another action or denies this action. | DENY with policy freshness, binding or explicit-denial reasons. | Recheck the applicable policy and revise the proposal/scope or seek an authorized policy decision. |
+| Required evidence is missing, failed, stale or bound elsewhere. | DENY with evidence presence, pass, freshness or binding reasons. | Gather and verify the required observations for this action before re-evaluation. |
+| One consequential step is blocked while independent safe work is available. | One evaluation returns DENY; a separate evaluation can return ALLOW. Each receipt names its `affected_transition`. | Hold the blocked step; evaluate independent work against its own authority and facts. |
+| An ALLOW/DENY result is hard to trace. | The receipt records the decision, denial reasons, action/context digests, time and affected transition. | Inspect the bound inputs and reasons; recheck reality before acting. ALLOW has an empty denial-reason list. |
+
+Required evidence is checked only under a current, exact-action-bound ALLOW Policy.
+These signals describe the supplied facts; the host verifies their connection to reality.
+The practical loop is: expose a mismatch or gap, localize the affected transition,
+revise the action/authority/policy/evidence/scope, then re-evaluate. Independent safe
+work can continue where its own evaluation and host checks permit.
+
 ## Bounded collaboration and continuous correction
 
 ```mermaid
@@ -123,7 +144,7 @@ The [examples guide](examples/README.md) explains the fixtures and separates cur
 TBC examples from legacy v0.1 material. The [compact integration snippet](examples/tbc_integration.py)
 is an additional four-function starting point: `python examples/tbc_integration.py`.
 
-## Frozen public API
+## Public API
 
 | Function | Contract |
 | --- | --- |
@@ -136,11 +157,10 @@ is an additional four-function starting point: `python examples/tbc_integration.
 functions plus `InputError` are the public surface; example helpers/output wrappers
 are not additional stable APIs or schemas.
 
-## What the host must own
+## Integration responsibilities and boundaries
 
-TBC performs pure evaluation and serialization. It does not authenticate identities,
-collect Human approval, verify external evidence, determine policy truth, observe a
-live repository, execute actions or provide persistence/orchestration.
+TBC supplies the pure evaluation and receipt contract. Your host supplies verified
+facts and integrates the result with its own execution controls.
 
 | Host responsibility | TBC check |
 | --- | --- |
@@ -149,15 +169,12 @@ live repository, execute actions or provide persistence/orchestration.
 | Supply time, encode all decision-relevant target details and decide which work is independent. | Explicit intervals and one evaluation scoped to the requested transition. |
 | Recheck target identity/state/freshness at the real transition, handle replay and enforce the result. Sanitize and retain outputs appropriately. | Return an unsigned receipt; no execution, authentication or replay protection. |
 
-Hashes do not establish truth. `dumps_receipt` validates shape, not authenticity.
-ALLOW is not an execution token or proof that an action happened. TBC cannot protect
-a host that fabricates trusted facts or ignores DENY.
+`dumps_receipt` validates shape, not authenticity; hashes do not establish truth.
+ALLOW is not an execution token or proof that an action happened. Reliable use rests
+on the host's verified facts and enforcement. For capability placement and future
+candidates, see the compact [capability disposition](docs/capability-disposition.md).
 
-See the compact [capability disposition](docs/capability-disposition.md) for the
-boundary between current Core, project policy and future candidates. Risk scoring,
-assumption workflows and automatic rule promotion are not implemented Core features.
-
-## Deterministic receipts and conformance
+## Deterministic behavior and conformance
 
 The same normalized action/context produces the same receipt bytes and digests.
 Encoding uses `sort_keys=True`, `ensure_ascii=False`, `separators=(",", ":")`,
@@ -184,17 +201,23 @@ and the separate legacy regression suite (127 tests). CI builds wheel/sdist and 
 the shipped current examples against a clean offline wheel install outside the checkout.
 The first-run check reports elapsed time against a ten-minute target.
 
-## Project status and participation
+## Project status, feedback and participation
 
 Development version: **`1.0.0a1`**. The reviewed foundation and four runnable use cases
 are merged on `main`; this is pre-freeze publication preparation, not a production
 readiness claim. No tagged release or package publication is announced. Historical
 `src/tbao/`, its tests and v0.1 docs remain reference material outside the current distribution/API.
 
-Contribute through [fork → branch → test → PR](CONTRIBUTING.md).
+Help improve TBC with concrete adoption experience:
+
+- Share real-world collaboration failures, hard-to-express boundaries, missing
+  observability, adoption friction and extension ideas in [GitHub Issues](https://github.com/andrew199799/trust-bounded-collaboration/issues), using public-safe examples.
+- For code or documentation contributions, follow [fork → branch → test → PR](CONTRIBUTING.md).
+- For security-sensitive reports, follow [SECURITY.md](SECURITY.md) to arrange a private channel before sharing details.
+
 Human maintainers own merge, release and publication; AI Agents follow [AGENTS.md](AGENTS.md).
-See [security reporting](SECURITY.md), [community conduct](CODE_OF_CONDUCT.md) and
-[unreleased changes](CHANGELOG.md). Never post secrets or private-source material publicly.
+See [community conduct](CODE_OF_CONDUCT.md) and [unreleased changes](CHANGELOG.md).
+Never post secrets or private-source material publicly.
 
 Licensed under [MIT](LICENSE), with a Human copyright holder. The package vendors
 no third-party code and has no third-party runtime dependencies; contributions must
