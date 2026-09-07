@@ -1,5 +1,9 @@
 # TBAO v0.1 Public Roadmap
 
+> Historical v0.1 reference. For the current purpose and scope, read the
+> [TBC vNext positioning](vnext-positioning.zh-en.md). This roadmap is not a current
+> runtime or platform implementation commitment.
+
 ## Current v0.1 Status
 
 TBAO v0.1 is a public manifesto, framework spec, mock-only static demo, and local-only mock Action Policy Kernel v0.1. It is not the full TBAO product, not production-ready, and not an execution runtime.
@@ -28,7 +32,7 @@ The local mock Action Policy Kernel makes risk classification, approval gating, 
 
 ## What Remains Protected / Outside This Repo
 
-- Implementation details from `MagicWorld2100/Twin-Brain-Agent-OS`.
+- Private implementation details and source material.
 - Proprietary or sensitive architecture, prompts, workflows, data, or operational records.
 - Runtime behavior, real integrations, credentials, deployment material, and execution-capable systems.
 - Business-sensitive material and personal data.
@@ -42,7 +46,7 @@ The local mock Action Policy Kernel makes risk classification, approval gating, 
 - Keep documentation navigation concise and reviewable.
 - Avoid runtime expansion.
 
-## Possible Future Extraction From Twin-Brain-Agent-OS
+## Possible Future Public Reference Material
 
 Future public material may be extracted only after it is abstracted, non-executing, non-proprietary, and non-sensitive.
 

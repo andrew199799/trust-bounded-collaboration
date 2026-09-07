@@ -1,4 +1,26 @@
-# Capability disposition before 1.0 freeze
+# Capability disposition: vNext purpose and the 1.0 mechanism
+
+TBC is an open practice and reference project for AI-native Individual Organizations:
+one Human and multiple AI agents working together over time. The current evaluator
+is one mechanism within that purpose. The [canonical vNext positioning](https://github.com/andrew199799/trust-bounded-collaboration/blob/main/docs/vnext-positioning.zh-en.md)
+contains the bilingual four-layer model and generalized field cases.
+
+## Reuse-first capability map / 优先复用能力图
+
+| Capability / 能力 | Placement / 归属 |
+| --- | --- |
+| Foundation models; Agent runtimes/orchestration; HITL UI/pause-resume; IAM/OAuth; policy engines; cloud, browser, memory, tools and tool protocols / 大模型、Agent 运行时与编排、HITL、IAM/OAuth、策略引擎、云、浏览器、记忆、工具及协议 | Reuse mature platform capabilities first. / 优先复用成熟平台能力。 |
+| Human meaning, project outcomes, organization structure, authority, coordination, correction and learning / 人的意义、项目结果、组织结构、授权、协调、纠偏与学习 | TBC exploration surface, not newly delivered infrastructure. / TBC 的探索范围，不代表新交付的基础设施。 |
+
+**TBC does not compete with the platform floor. It builds on it.** A mature platform
+may already provide the whole boundary a host needs; reuse it when sufficient.
+Organizational memory practices do not require a TBC memory system, and the evaluator
+does not become a general SDLC or universal governance platform.
+
+**TBC 不与平台地板竞争，而是在其上开展工作。** 成熟平台可能已经完整提供宿主需要的边界，
+足够解决问题时应直接复用。组织记忆实践不要求新建 TBC 记忆系统，评估器也不扩展为通用 SDLC 或通用治理平台。
+
+## Current 1.0 integration boundaries
 
 This is an integration boundary map for the current four-function library, not a
 roadmap commitment or a new schema. The audit uses the public implementation,
@@ -29,7 +51,7 @@ over host-owned evidence passed through today's contract. A risk assessment alon
 must never mint authority or bypass required evidence. Local interpretation and
 consequence policy remain with each project.
 
-## Freeze recommendation
+## Stable executable contract
 
 Keep the current API, schemas, CLI, version and runtime dependencies unchanged.
 The [four runnable use cases](../examples/README.md) cover the promised generic

@@ -1,49 +1,31 @@
-# Documentation Index
+# Documentation index / 文档索引
 
-This index helps public readers find the right document quickly. It is navigation only, not a second project README.
+TBC explores one Human + multiple AI agents working over time as an AI-native Individual Organization. Start with the organizational purpose, then examine the current evaluator as one mechanism. **vNext** is the positioning direction; the executable contract remains **`1.0.0`**.
 
-## Recommended reading path
+TBC 探索一个 Human 与多个 AI Agent 长期协作的 AI 原生个人组织。先理解组织目的，再把当前评估器作为其中一个机制阅读。**vNext** 表示定位方向；可执行契约仍为 **`1.0.0`**。
 
-1. [`../README.md`](../README.md)
-2. [`one-page-summary.zh-en.md`](one-page-summary.zh-en.md)
-3. [`framework-overview.zh-en.md`](framework-overview.zh-en.md)
-4. [`principles.zh-en.md`](principles.zh-en.md)
-5. [`action-spine-mvp.zh-en.md`](action-spine-mvp.zh-en.md)
-6. [`non-goals.zh-en.md`](non-goals.zh-en.md)
-7. [`development-log/action-spine-static-mock-example.md`](development-log/action-spine-static-mock-example.md)
+## Current reading path / 当前阅读路径
 
-## Public-facing docs
+1. [English README](../README.md) / [中文首页](../README.zh-CN.md): purpose and runnable evaluator / 项目目的与可运行评估器。
+2. [vNext positioning](vnext-positioning.zh-en.md): canonical bilingual definition, four layers, reuse map and five sanitized field cases / 统一双语定义、四层关系、复用能力图与五个脱敏案例。
+3. [One-page summary](one-page-summary.zh-en.md): compact bilingual brief / 双语摘要。
+4. [Organization and mechanisms](framework-overview.zh-en.md): how the purpose and current code fit / 项目目的与现有代码的关系。
+5. [Capability disposition](capability-disposition.md) and [examples](../examples/README.md): precise 1.0 boundaries and offline demonstrations / 确切的 1.0 边界与离线演示。
+6. [Non-goals](non-goals.zh-en.md): reuse, authority and scope limits / 复用、权威与范围边界。
+7. [Discussion guide](discussion-guide.md) and [contributing](../CONTRIBUTING.md): cases, counterexamples and proposals through existing repository surfaces / 通过现有仓库入口贡献案例、反例与提案。
 
-- [`one-page-summary.zh-en.md`](one-page-summary.zh-en.md): concise bilingual public brief.
-- [`position-paper.zh-en.md`](position-paper.zh-en.md): v0.1 public stance and rationale.
-- [`roadmap.md`](roadmap.md): public-framework roadmap.
-- [`discussion-guide.md`](discussion-guide.md): public contributor discussion guide.
-- [`release-notes/v0.1-public-manifesto-static-demo.md`](release-notes/v0.1-public-manifesto-static-demo.md): v0.1 public manifesto and static demo release notes.
+## Historical and reference material / 历史与参考材料
 
-## Framework docs
+These documents retain their earlier scope and vocabulary. They are not the current positioning, API or a commitment to implement a runtime. The v0.1 reference remains local-only, mock-only and non-executing. Historical concepts should be read against the current non-goals above.
 
-- [`framework-overview.zh-en.md`](framework-overview.zh-en.md): how the framework pieces fit together.
-- [`principles.zh-en.md`](principles.zh-en.md): core principles.
-- [`glossary.zh-en.md`](glossary.zh-en.md): stable bilingual terminology.
+下列文档保留早期范围与术语，不代表当前定位、API 或运行时建设承诺。v0.1 参考仍仅本地、仅模拟、不执行；阅读历史概念时请同时参照当前非目标。
 
-## Demo / Mock-Only Docs
+- [v0.1 position paper](position-paper.zh-en.md), [principles](principles.zh-en.md), [glossary](glossary.zh-en.md) and [roadmap](roadmap.md).
+- [Action Spine MVP](action-spine-mvp.zh-en.md), [reference skeleton](action-spine-reference-skeleton.md) and [static mock example](development-log/action-spine-static-mock-example.md).
+- [Action Spine diagram](diagrams/action-spine-flow.mmd) and [public/protected boundary diagram](diagrams/public-protected-boundary.mmd).
+- [v0.1 release notes](release-notes/v0.1-public-manifesto-static-demo.md) and [Phase 1 closure note](development-log/phase-1-release-note.md).
+- [Agent maturity discussion draft](discussion/agent-maturity-governance.zh-en.md).
 
-- [`action-spine-mvp.zh-en.md`](action-spine-mvp.zh-en.md): mock-only Action Spine MVP design.
-- [`action-spine-reference-skeleton.md`](action-spine-reference-skeleton.md): non-executable pseudo-interface reference skeleton.
-- [`development-log/action-spine-static-mock-example.md`](development-log/action-spine-static-mock-example.md): static mock proposal example.
-- [`diagrams/action-spine-flow.mmd`](diagrams/action-spine-flow.mmd): Mermaid source for the Action Spine flow.
-- [`diagrams/public-protected-boundary.mmd`](diagrams/public-protected-boundary.mmd): Mermaid source for the public/protected repository boundary.
+For Agent task continuity, read [current task context](development-log/current-task-context.md) and [AGENTS.md](../AGENTS.md), then the latest Human instructions on the current Issue.
 
-## Development-Log Docs
-
-- [`development-log/current-task-status.md`](development-log/current-task-status.md): current public work status.
-- [`development-log/phase-1-release-note.md`](development-log/phase-1-release-note.md): Phase 1 closure note.
-
-## Discussion & Architecture Extensions
-
-- [`discussion/agent-maturity-governance.zh-en.md`](discussion/agent-maturity-governance.zh-en.md): agent maturity model and governance feedback loop (v0.1 discussion draft).
-
-## Non-Goals And Boundaries
-
-- [`non-goals.zh-en.md`](non-goals.zh-en.md): explicit non-goals and safety boundaries.
-- [`../AGENTS.md`](../AGENTS.md): Codex collaboration and scope-control baseline.
+Agent 续接任务时，应阅读[当前任务上下文](development-log/current-task-context.md)与 [AGENTS.md](../AGENTS.md)，再核对当前 Issue 的最新 Human 指令。
