@@ -2,20 +2,21 @@
 
 Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-Current task: [Phase 4 — Thin Vertical Implementation & Distribution Baseline (#27)](https://github.com/andrew199799/trust-bounded-collaboration/issues/27), using the frozen architecture in #26. Read the current Issue and Human review before acting; they supersede this continuity note.
+Phase 4 (#27, PR #28) is merged. Canonical main `393a0d793a7bd501b3c35dddc168e12705d533c9`
+matches the approved tree; canonical Python 3.11–3.14 CI passed 99 tests/job,
+wheel/sdist and clean installation. Repository-level license detection is MIT.
+The Agent's READ identity could not close #27; that administrative step is
+maintainer-owned and does not negate the implementation evidence.
 
-The authorized slice is the complete MIT license, attribution/name preflight,
-acceptance tests, a small standard-library-only `tbc` package, offline repository
-demo, wheel/sdist and clean-install validation, Python 3.11–3.14 CI and a minimal
-Quick Start. Authentication, policy ownership, raw evidence verification, live
-collection/enforcement and execution remain with the host/platform.
+Current task: [repository hygiene and release readiness (#29)](https://github.com/andrew199799/trust-bounded-collaboration/issues/29), following the Human's post-merge instruction. Read the latest Human instruction and task comments before acting.
 
-Work from exact canonical main in one isolated task workspace. Push only to the
-Agent fork and use exactly one canonical Draft PR; iterate ordinary failures in
-that PR, then stop for Human / ChatGPT implementation review. Follow AGENTS.md and
-CONTRIBUTING.md. No private-source copying, ruleset change, merge, tag, release,
-package publication, runtime or broad historical cleanup is authorized.
+Prepare a small documentation/distribution proposal: current README status,
+security-reporting and conduct guidance, Unreleased changelog and source-package
+inclusion. Repository description/topics are proposed in the Issue for a maintainer
+to apply. Use a fresh isolated canonical baseline and an Agent fork PR. Keep package
+version `1.0.0a1` and the API unchanged.
 
-Run the tests/build/clean-install checks documented in README.md. Record actual
-matrix results, exact PR head SHA and first-run time; do not promote unrun checks
-to PASS. Legacy `tbao` remains reference-only and outside the new distribution.
+No permission/ruleset changes, merge, tag, release, package publication, private-source
+copying or historical rewrite is authorized. Human approval still owns release and
+publication. Follow AGENTS.md/CONTRIBUTING.md; validate documentation, source contents,
+package build and clean installation without claiming a release occurred.
