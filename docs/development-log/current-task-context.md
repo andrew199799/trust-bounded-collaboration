@@ -1,23 +1,21 @@
 # Current Task Context
 
-## Project and authority
+Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-Trust-Bounded Collaboration — canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
+Current task: [Phase 4 — Thin Vertical Implementation & Distribution Baseline (#27)](https://github.com/andrew199799/trust-bounded-collaboration/issues/27), using the frozen architecture in #26. Read the current Issue and Human review before acting; they supersede this continuity note.
 
-Current task: [v1.0 Phase 1 — Multi-Agent Fork/PR Collaboration Baseline (#23)](https://github.com/andrew199799/trust-bounded-collaboration/issues/23), under [umbrella #22](https://github.com/andrew199799/trust-bounded-collaboration/issues/22). Read the current Issue body and applicable Human comments before acting; this file is continuity context, not additional authority.
+The authorized slice is the complete MIT license, attribution/name preflight,
+acceptance tests, a small standard-library-only `tbc` package, offline repository
+demo, wheel/sdist and clean-install validation, Python 3.11–3.14 CI and a minimal
+Quick Start. Authentication, policy ownership, raw evidence verification, live
+collection/enforcement and execution remain with the host/platform.
 
-## Scope
+Work from exact canonical main in one isolated task workspace. Push only to the
+Agent fork and use exactly one canonical Draft PR; iterate ordinary failures in
+that PR, then stop for Human / ChatGPT implementation review. Follow AGENTS.md and
+CONTRIBUTING.md. No private-source copying, ruleset change, merge, tag, release,
+package publication, runtime or broad historical cleanup is authorized.
 
-- Establish native Git/GitHub collaboration: canonical read/fetch → isolated Agent workspace → contributor fork branch → canonical Draft PR → Human review.
-- Keep the execution contract vendor-neutral and the contributor path familiar. Apply the public artifact rule and bounded hygiene to directly touched current-facing docs.
-- Start each Agent/task from exact current canonical `main` in an isolated workspace. Verify API/transport identity, fork parent, remote roles, and permissions before mutation.
-- Add a custom guard only if evidence shows native permissions and documentation are insufficient. Canonical read-only permission is sufficient denial evidence; no dangerous write probe is required.
-- Phase 1 authorizes one executing Agent fork if needed and exactly one canonical Draft PR. Use the PR for intermediate progress and the Issue for the final sanitized checkpoint.
-
-## Boundaries and validation
-
-No direct canonical push, permission changes, merge, tag, release, private-source copying, broad v1 implementation, or repository-wide historical rewrite. Every GitHub artifact must be assumed public before writing; follow [AGENTS.md](../../AGENTS.md) and [CONTRIBUTING.md](../../CONTRIBUTING.md).
-
-The existing v0.1 reference remains local-only, mock-only, non-executing, and not production-ready, with no real credentials, funds, or external side effects.
-
-Run `python3 -m pytest -q` and `git diff --check`. Verify the PR base/head repository, branch, and exact SHA; test updates only on the contributor branch. Record available CI results accurately, including when no workflow exists. Human maintainers retain final merge/release authority.
+Run the tests/build/clean-install checks documented in README.md. Record actual
+matrix results, exact PR head SHA and first-run time; do not promote unrun checks
+to PASS. Legacy `tbao` remains reference-only and outside the new distribution.
