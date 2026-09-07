@@ -17,14 +17,15 @@ Human and AI-assisted contributions are welcome. The canonical project is [andre
 
    `upstream` is the canonical read/fetch source; `origin` is your writable fork. Check both fetch and push URLs with `git remote -v`, and verify the fork's owner and parent on GitHub before pushing. Do not infer repository identity from a remote name.
 
-3. Make a small change. Install `pytest` in your Python development environment, then run from the repository root:
+3. Make a small change. Use Python 3.11–3.14 and install the package/test tools, then run from the repository root:
 
    ```sh
+   python3 -m pip install -e . pytest==9.1.1 build==1.6.0
    python3 -m pytest -q
    git diff --check
    ```
 
-   The current tests exercise the local mock reference implementation. Add focused positive and negative tests when introducing a tool or changing behavior.
+   Tests cover the current TBC contracts/demo and the separate legacy mock reference. Add focused positive and negative tests when introducing a tool or changing behavior.
 
 4. Review `git status` and your diff before staging only intended files. Commit and push your task branch to your fork:
 

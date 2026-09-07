@@ -1,0 +1,5 @@
+prune src/tbao
+prune tests
+include tests/test_tbc_contract.py
+include tests/test_tbc_demo.py
+include examples/tbc_integration.py

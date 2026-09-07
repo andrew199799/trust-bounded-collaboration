@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trust-bounded-collaboration"
+version = "1.0.0a1"
+description = "Pure exact-action evaluation with bound unsigned receipts"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Repository = "https://github.com/andrew199799/trust-bounded-collaboration"
+Issues = "https://github.com/andrew199799/trust-bounded-collaboration/issues"
+
+[project.scripts]
+tbc = "tbc.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["tbc", "tbc.*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

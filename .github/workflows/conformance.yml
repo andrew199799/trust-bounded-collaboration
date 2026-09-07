@@ -1,0 +1,36 @@
+name: Python conformance
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install development tools and package
+        run: python -m pip install -e . pytest==9.1.1 build==1.6.0
+      - name: Contract, golden-byte, demo and legacy tests
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+        run: python -m pytest -q
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Inspect artifacts and measure clean offline first run
+        run: python tests/check_distribution.py
+      - name: Whitespace check
+        run: git diff --check
