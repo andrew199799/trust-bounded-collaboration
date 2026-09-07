@@ -213,10 +213,10 @@ The first-run check reports elapsed time against a ten-minute target.
 
 ## Project status, feedback and participation
 
-Repository contract prepared for **`1.0.0`**. The reviewed foundation and four runnable
-use cases are merged on `main`. Tag, GitHub Release and package publication remain
-pending Human release authorization. This candidate does not claim production
-readiness for every adopting project. Historical `src/tbao/`, its tests and v0.1 docs
+The repository contract is **`1.0.0`**. The reviewed foundation and four runnable
+use cases are merged on `main`. Tagging, GitHub Release and package publication are
+separate Human-controlled steps. This version does not claim production readiness
+for every adopting project. Historical `src/tbao/`, its tests and v0.1 docs
 remain reference material outside the current distribution/API.
 
 Help improve TBC with concrete adoption experience:
