@@ -1,9 +1,9 @@
 # Changelog
 
-## 1.0.0 — unreleased candidate
+## 1.0.0
 
-The repository contract is prepared for `1.0.0`. Tag, GitHub Release and package
-publication remain pending Human release authorization; this is not a release announcement.
+Repository contract changes for `1.0.0` are listed below. Tagging, GitHub Release
+and package publication are separate Human-controlled steps.
 
 - Four-function Python API: request validation, exact action digest, pure scoped
   evaluation and deterministic unsigned receipt serialization.

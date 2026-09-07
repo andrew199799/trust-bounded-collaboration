@@ -1,9 +1,9 @@
 # Security reporting
 
-The repository contract is prepared for `1.0.0`; tag, GitHub Release and package
-publication remain pending Human release authorization. There are no tagged releases
-with a maintenance/support commitment yet. Please identify the exact commit or
-package version when reporting a concern.
+The repository contract is `1.0.0`. Tagging, GitHub Release and package publication
+are separate Human-controlled steps. A version or tag alone does not establish a
+maintenance/support commitment. Please identify the exact commit or package version
+when reporting a concern.
 
 ## Arrange a private channel first
 
