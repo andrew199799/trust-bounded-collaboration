@@ -5,8 +5,8 @@ proposed action. It returns an explainable decision and a reproducible unsigned
 receipt. Evaluation is pure: it performs no authentication, network access, clock
 lookup, persistence or action execution.
 
-**Status:** 1.0 foundation under implementation review (`1.0.0a1`); no release or
-package publication. CPython 3.11–3.14 is the conformance target. Runtime dependencies:
+**Status:** reviewed 1.0 foundation merged on `main`; development version `1.0.0a1`.
+No tagged release or package publication is announced. CPython 3.11–3.14 is the conformance target. Runtime dependencies:
 Python standard library only.
 
 ## Quick Start
@@ -98,8 +98,13 @@ they are outside the new distribution and stable API. Start with the example abo
 for the current library. No historical rewrite or compatibility migration is implied.
 
 Contribute through [fork → branch → test → PR](CONTRIBUTING.md). Human maintainers own
-merge/release/publication; AI Agents follow [AGENTS.md](AGENTS.md). Current implementation
-scope is [Issue #27](https://github.com/andrew199799/trust-bounded-collaboration/issues/27).
+merge/release/publication; AI Agents follow [AGENTS.md](AGENTS.md). Current release-readiness
+preparation is [Issue #29](https://github.com/andrew199799/trust-bounded-collaboration/issues/29).
+
+See [security reporting](SECURITY.md), [community conduct](CODE_OF_CONDUCT.md) and
+[unreleased changes](CHANGELOG.md). Built by Andrew with ChatGPT and Codex as AI
+engineering collaborators; this does not imply organizational endorsement.
+Copyright ownership remains with the applicable Human copyright holder.
 
 Licensed under the complete [MIT License](LICENSE). The new package vendors no
 third-party code and has no third-party runtime dependencies. No independently required third-party notice

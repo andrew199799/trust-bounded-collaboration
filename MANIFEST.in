@@ -3,3 +3,6 @@ prune tests
 include tests/test_tbc_contract.py
 include tests/test_tbc_demo.py
 include examples/tbc_integration.py
+include SECURITY.md
+include CODE_OF_CONDUCT.md
+include CHANGELOG.md
