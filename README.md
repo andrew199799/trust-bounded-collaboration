@@ -35,6 +35,12 @@ TBC does not compete with foundation models, Agent runtimes or orchestration, HI
 
 **TBC is not trying to become the platform beneath every Human-AI organization. It is trying to understand and improve how those organizations actually work on top of increasingly capable platforms.**
 
+## Practice basis
+
+In our field practice, one Human and multiple AI collaborators have already worked together across a full real software product lifecycle, from product definition and design through engineering, testing, release and operations. This TBC repository is itself a Human + ChatGPT + Codex collaboration.
+
+The underlying project evidence is not disclosed in this public repository. This is a bounded first-party field-practice claim, not independent validation or universal proof.
+
 ## From real work to a small mechanism
 
 TBC grows from real Human-AI project practice. We extract collaboration problems that repeatedly appear in real work, turn validated principles into public cases and mechanisms, and implement code only where executable boundaries materially help.

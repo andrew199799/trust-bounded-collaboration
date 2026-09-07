@@ -18,6 +18,16 @@ The organizational part is continuity: a shared goal, division of work, handoffs
 
 “组织”体现在长期延续的共同目标、分工、交接、权限边界、纠偏与学习上。同时打开几个 AI 工具，并不自动形成这些关系。组织能力增长时，Human 仍保留判断权和最终后果决定权。
 
+## Practice basis / 实践基础
+
+In our field practice, one Human and multiple AI collaborators have already worked together across a full real software product lifecycle, from product definition and design through engineering, testing, release and operations. This TBC repository is itself a Human + ChatGPT + Codex collaboration.
+
+The underlying project evidence is not disclosed in this public repository. This is a bounded first-party field-practice claim, not independent validation or universal proof.
+
+在真实软件产品实践中，一个 Human 与多个 AI 协作者已经共同走过产品定义、设计、工程、测试、发布与运营的完整周期。TBC 仓库本身也是 Human + ChatGPT + Codex 的协作产物。
+
+底层项目证据不在本公开仓库披露。这是有明确范围的第一方实践陈述（bounded first-party field-practice claim），不是独立验证，也不是普遍证明。
+
 ## Four layers / 四层关系
 
 ```text
@@ -52,7 +62,7 @@ Read downward from purpose to supporting capabilities. This is a conceptual map,
 
 **Large platforms provide capability; Humans retain meaning.** **Treat the platform as the floor, not the ceiling.**
 
-**大平台提供能力，人保留意义。我们把强大的 AI 平台当作地板，而不是天花板。**
+**大平台负责能力，我们负责意义。我们把强大的 AI 平台当作地板，而不是天花板。**
 
 | Capability / 能力 | Placement / 归属 |
 | --- | --- |
@@ -108,11 +118,11 @@ These five cases generalize recurring Human-AI engineering experiences identifie
 
 ### PROVIDER_CAPABILITY != PRODUCT_AUTHORITY
 
-1. **What happened / 发生了什么：** An Agent treated available tool access as permission to take a consequential project action. / Agent 将可用的工具访问能力当成执行项目后果性动作的许可。
-2. **Why dangerous / 为什么危险：** Credentials described what was technically possible, not what the Human had authorized for this task. / 凭据描述技术上能做什么，不能代表 Human 对当前任务的授权。
-3. **Detection / 如何发现：** Review compared the proposed action with the task mandate and the contributor's role. / 复核将拟执行动作与任务授权及贡献者角色逐一比较。
-4. **Principle / 可复用原则：** Technical capability never supplies missing task authority. / 技术能力不能补足缺失的任务授权。
-5. **Reuse and possible boundary / 复用与机制空间：** Reuse IAM, least-privilege credentials and policy enforcement. TBC's existing Grant check can deny missing or mismatched exact-action authority; the host still authenticates and verifies the approver. / 复用 IAM、最小权限凭据与策略控制。TBC 现有 Grant 检查可拒绝缺失或错绑的确切动作授权；批准者的认证与权限核实仍由宿主负责。
+1. **What happened / 发生了什么：** A product flow reused Provider leaf capabilities, such as generation, recognition, text-to-speech (TTS) or tool/runtime support, and let Provider results or defaults decide when to advance, finish or retry. / 产品流程复用了 Provider 的生成、识别、语音合成（TTS）或工具／运行时等底层单项能力，却同时让 Provider 的返回结果或默认行为决定何时推进、完成或重试。
+2. **Why dangerous / 为什么危险：** Capability behavior silently became product authority: state advancement, completion criteria, retry, acceptance and business/accounting semantics could follow Provider defaults rather than Human/host/project decisions. / 单项能力的行为悄悄变成了产品权威：状态推进、完成条件、重试、验收与业务／核算语义可能跟随 Provider 默认行为，偏离 Human／宿主／项目的决定。
+3. **Detection / 如何发现：** The Human reviewed the end-to-end flow against product acceptance criteria and traced which decisions belonged to the host but had been delegated to Provider behavior. / Human 按产品验收条件复核完整流程，追查哪些本应由宿主掌握的决定被交给了 Provider 行为。
+4. **Principle / 可复用原则：** Providers supply leaf capabilities; the Human/host/project retains authority over product flow, state advancement, completion, retry, acceptance and business/accounting semantics. / Provider 提供底层单项能力；产品流程、状态推进、完成、重试、验收与业务／核算语义的决定权仍归 Human／宿主／项目。
+5. **Reuse and possible boundary / 复用与机制空间：** Reuse mature Provider capabilities first; keep product and flow authority in the host, including how Provider outputs map to product state and outcomes. TBC can make that responsibility boundary explicit and, where useful, bind host-verified evidence to a host-defined transition; its current evaluator does not define product semantics or manage the flow. / 优先复用成熟 Provider 能力；产品与流程权威留在宿主，包括由宿主决定 Provider 输出如何映射到产品状态与结果。TBC 可帮助明确这条职责边界，并在有必要时将宿主验证的证据绑定到宿主定义的操作；当前评估器不定义产品语义，也不管理流程。
 
 ### HUMAN_QUESTION != EXECUTION_AUTHORIZATION
 
