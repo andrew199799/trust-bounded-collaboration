@@ -17,6 +17,10 @@ def assert_python_range(metadata):
     assert {part.strip() for part in values[0].split(",")} == {">=3.11", "<3.15"}, values[0]
 
 
+CURRENT_EXAMPLES = (
+    "tbc_integration.py", "approval_bound_action.py",
+    "evidence_bound_transition.py", "scoped_blocker.py",
+)
 root = Path(__file__).resolve().parents[1]
 wheel, = (root / "dist").glob("*.whl")
 sdist, = (root / "dist").glob("*.tar.gz")
@@ -31,10 +35,19 @@ with zipfile.ZipFile(wheel) as archive:
     assert_python_range(metadata)
     assert "License-Expression: MIT" in metadata
     assert "Requires-Dist:" not in metadata
+source_examples = {}
 with tarfile.open(sdist) as archive:
     names = archive.getnames()
     assert not any("/tbao/" in n or "/docs/" in n or "/social/" in n for n in names)
     assert any(n.endswith("/src/tbc/__init__.py") for n in names)
+    relative = {n.split("/", 1)[-1]: n for n in names}
+    expected_examples = {"examples/README.md", *("examples/" + n for n in CURRENT_EXAMPLES)}
+    assert {n for n in relative if n.startswith("examples/")} == expected_examples
+    assert "tests/test_tbc_examples.py" in relative
+    for name in CURRENT_EXAMPLES:
+        data = archive.extractfile(relative["examples/" + name]).read()
+        assert data == (root / "examples" / name).read_bytes()
+        source_examples[name] = data
     metadata_name, = [n for n in names if n.split("/", 1)[-1] == "PKG-INFO"]
     assert_python_range(archive.extractfile(metadata_name).read().decode())
 
@@ -51,7 +64,21 @@ with tempfile.TemporaryDirectory() as temp:
     assert subprocess.check_output([str(command), "demo", "repository", "--json"], cwd=temp, text=True) == result
     probe = "import importlib.util; assert importlib.util.find_spec('tbao') is None"
     subprocess.run([str(python), "-I", "-c", probe], cwd=temp, check=True, capture_output=True)
-    subprocess.run([str(python), "-I", str(root / "examples/tbc_integration.py")], cwd=temp, check=True, capture_output=True)
+    # Run the exact scripts shipped in the sdist against only the installed wheel,
+    # from outside the checkout. -I excludes checkout/PYTHONPATH import leakage.
+    for name, data in source_examples.items():
+        script = Path(temp) / name
+        script.write_bytes(data)
+        args = [str(python), "-I", str(script)]
+        output = subprocess.check_output(args, cwd=temp, text=True)
+        assert subprocess.check_output(args, cwd=temp, text=True) == output
+        result = json.loads(output)
+        if name == "tbc_integration.py":
+            assert result["decision"] == "ALLOW" and result["executed"] is False
+        else:
+            assert result["simulation"] is True
+            assert result["cases"]
+            assert all(r["executed"] is False for r in result["cases"].values())
 elapsed = time.monotonic() - started
 assert elapsed < 600
-print(json.dumps({"wheel_contents": "PASS", "sdist_contents": "PASS", "clean_install": "PASS", "first_run_seconds": round(elapsed, 3)}))
+print(json.dumps({"wheel_contents": "PASS", "sdist_contents": "PASS", "clean_install": "PASS", "current_examples": len(CURRENT_EXAMPLES), "first_run_seconds": round(elapsed, 3)}))

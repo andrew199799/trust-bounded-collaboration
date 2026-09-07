@@ -2,7 +2,12 @@ prune src/tbao
 prune tests
 include tests/test_tbc_contract.py
 include tests/test_tbc_demo.py
+include tests/test_tbc_examples.py
 include examples/tbc_integration.py
+include examples/README.md
+include examples/approval_bound_action.py
+include examples/evidence_bound_transition.py
+include examples/scoped_blocker.py
 include SECURITY.md
 include CODE_OF_CONDUCT.md
 include CHANGELOG.md
