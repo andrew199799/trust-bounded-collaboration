@@ -2,22 +2,29 @@
 
 Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-Current task: [final acceptance and release transition (#35)](https://github.com/andrew199799/trust-bounded-collaboration/issues/35).
-Human merged RC PR #36 at `d1ae5d1ff4735c5456f08c21eb3058688e41b1da`, version `1.0.0`.
-Read the latest Human instructions and Issue comments before acting.
+Current task: [TBC vNext positioning and public narrative (#38)](https://github.com/andrew199799/trust-bounded-collaboration/issues/38).
+Read the latest Human instructions and the authoritative wording comment on that Issue.
+The current authorization supersedes the earlier release-transition task notes.
 
-The final release-truth Draft PR changes release-state wording only. Preserve
-version, API, schemas, reason codes, CLI, runtime dependencies, MIT, examples and
-workflow. Verify exact-head tests, distribution, bilingual parity and required CI,
-then stop for Human / ChatGPT review and Human merge. Do not self-merge.
+Canonical main baseline refreshed before branching:
+`a51fb965e30af375502a73a11b09b9c11071dce6`.
+Executor: Codex / `yanxi1024-git`, using an isolated contributor clone and one task
+branch, `docs/issue-38-vnext-positioning`. API and SSH identities match that account;
+canonical permissions are read-only and the contributor fork has write access.
+Commit attribution uses the Agent account's GitHub noreply identity.
 
-After Human merges this PR, Issue #35 authorizes one annotated `v1.0.0` tag at the
-exact resulting canonical main, after green post-merge CI. If that tag already
-exists or its target is ambiguous, stop; never move, replace or delete a tag.
-The same instruction authorizes only the specified About description/topics update.
-Verify the tag, version and About metadata before the final checkpoints and closure
-of #35 and #22. Leave both open on any mismatch. These are conditional execution
-instructions, not a claim that tagging or closure has occurred.
+Scope: bilingual first-screen positioning for AI-native Individual Organizations,
+one compact canonical positioning document with five sanitized generalized cases
+and a reuse-first map, and reconciliation of conflicting current public entry docs.
+Preserve the Human's core formulations. Keep historical/reference material intact
+apart from scoped public-reference sanitation and an explicit historical reading boundary.
 
-GitHub Release and package publication remain unauthorized. Do not change rulesets,
-permissions or unrelated settings, copy private sources, or rewrite history.
+Use `vNext`; preserve `1.0.0`, API, schemas, behavior, CLI, runtime dependencies,
+examples, tests and distribution contract. Run existing tests, build, clean offline
+distribution checks and `git diff --check`; verify the published PR base, contributor
+head repository/branch and exact head SHA. Keep interim/final validation in the one
+focused PR body. Human/ChatGPT review and Human merge remain separate decisions.
+
+Do not merge, tag, release, publish packages, change permissions, perform external
+outreach, add private material or create a runtime/platform. Prior conditional release
+instructions are not authority to perform release work within this task.

@@ -1,120 +1,39 @@
-# Trust-Bounded Agent OS (TBAO)
+# TBC at a glance / TBC 一页摘要
 
-## One-Sentence Summary / 一句话摘要
+**Trust-Bounded Collaboration (TBC) is an open practice and reference project for AI-native Individual Organizations.**
 
-**English**: TBAO is a public framework and mock-only demo for making AI agent actions inspectable, bounded, confirmable, and auditable before execution.
+**Trust-Bounded Collaboration（TBC）是一个面向 AI-native Individual Organization 的开放实践与参考项目。**
 
-**中文**：TBAO 是一个公开框架和仅模拟演示，用于让 AI Agent 的行动在执行前可检查、有边界、可确认、可审计。
+## Who and why / 为谁、为何
 
-## Why It Matters / 为什么重要
+One Human works with multiple AI agents over time across research, product, design, engineering, testing, release and operations, building the effective capacity of a small organization. Shared goals, division of work, handoffs, correction and learning give this continuity beyond using several AI tools.
 
-**English**: AI is moving from conversation to action across tools, files, APIs, workflows, and external systems. The critical risk is not only wrong answers, but uncontrolled agent power, unclear authority, missing confirmation, weak auditability, and unrecoverable side effects.
+一个 Human 与多个 AI Agent 长期协作，覆盖研究、产品、设计、工程、测试、发布与运营，形成小型组织的工作能力。共同目标、分工、交接、纠偏与学习，让这种协作超越同时使用多个 AI 工具。
 
-**中文**：AI 正在从对话走向跨工具、文件、API、工作流和外部系统的行动。关键风险不只是错误答案，还包括失控的 Agent 权力、模糊授权、缺失确认、弱审计能力和不可恢复的副作用。
+**Human meaning sovereignty means that AI may greatly expand cognition and execution, but the Human remains the authority for what matters, why it matters, what outcome is acceptable, and which consequences are worth taking.**
 
-## Core Position / 核心立场
+**所谓人的意义主权，不是要求 Human 亲手执行每一步，而是无论 AI 的能力扩展到什么程度，什么事情值得做、为什么做、什么结果才算好、哪些后果可以接受，最终仍由 Human 决定。**
 
-**English**: TBAO protects human meaning sovereignty. It does not restrict the growth of intelligence; it restricts uncontrolled agent power. Agents may interpret and propose, but side-effectful action must be bounded and reviewable.
+**Human-in-command, not Human-in-every-loop.** Humans retain final responsibility while Agents advance authorized work. Technical success must not silently redefine the goal.
 
-**中文**：TBAO 保护人的意义主权。它不限制智能的生长，只限制失控的 Agent 权力。Agent 可以解释和建议，但有外部副作用的行动必须有边界、可审查。
+**Human 掌握最终指挥权，不必身处每一步循环。** Agent 推进已授权工作，人保留最终责任；技术成功不能悄悄改写真正的目标。
 
-## Core Doctrine / 核心总纲
+## Build on the floor / 站在平台地板上
 
-**English**
+**We treat powerful AI platforms as the floor, not the ceiling.** Reuse mature models, runtimes/orchestration, HITL, IAM/OAuth, policy engines, cloud, browser, memory and tools. TBC explores Human meaning, project outcomes, collaboration structure, authority, coordination, correction and shared learning above that floor. It does not build a general SDLC or universal governance platform.
 
-```text
-1. Human beings retain sovereignty over meaning.
-2. Human knowledge, experience, and preferences must retain provenance, boundaries, and confirmation status.
-3. AI may interpret, advise, and act only within authorized boundaries.
-4. Judgment-shaping advice must be source-grounded, challengeable, verifiable, and downgradeable.
-5. Side-effectful action must be decidable, traceable, and recoverable.
-```
+**我们把强大的 AI 平台当作地板，而不是天花板。** 优先复用成熟的模型、运行时／编排、HITL、IAM／OAuth、策略引擎、云、浏览器、记忆与工具。TBC 探索地板之上的人的意义、项目结果、协作结构、授权、协调、纠偏与共同学习，不建设通用 SDLC 或通用治理平台。
 
-**中文**
+## Practice and code / 实践与代码
 
-```text
-1. 人拥有意义主权。
-2. 人的知识、经验和偏好必须保留来源、边界和确认状态。
-3. AI 只能在授权边界内解释、建议和行动。
-4. 影响判断的建议必须可溯源、可质疑、可校验、可降级。
-5. 有外部副作用的行动必须可裁决、可追踪、可恢复。
-```
+Real collaboration failures suggest reusable principles. Reuse existing platform capability where sufficient; otherwise add the smallest useful executable boundary, then return to real project use for validation.
 
-## Action Spine / 行动脊柱
+真实协作失败帮助形成可复用原则；成熟平台已有足够能力则直接复用，仍有缺口才增加最小可执行边界，再回到真实项目验证。
 
-```text
-intent
-  -> proposed_action
-  -> risk_tier
-  -> required_confirmation
-  -> execution_status
-  -> audit_note
-```
+The `1.0.0` exact-action authority / policy / evidence evaluator is one such mechanism: approval for action A must not silently authorize changed action B. It returns deterministic unsigned receipts and never executes actions. Hosts verify facts and enforce decisions. **vNext** upgrades the positioning, with no package version or executable contract change. The broader organization principles remain open to counterexamples; neither field cases nor conformance tests establish universal validation.
 
-**English**: Current v0.1 only demonstrates this structure as mock-only documentation. It does not execute actions or operate as a production runtime.
+`1.0.0` 的 exact-action authority / policy / evidence evaluator 是其中一个机制：动作 A 的批准不能悄悄授权已变化的动作 B。它返回确定性未签名回执，不执行动作；事实验证与执行控制由宿主负责。**vNext** 升级的是定位，不改变软件包版本或可执行契约。更广的组织原则仍接受反例检验；实践案例与一致性测试均不构成普遍验证。
 
-**中文**：当前 v0.1 只以仅模拟文档展示这个结构，不执行行动，也不是生产运行时。
+Read the [canonical vNext positioning and five generalized field cases](vnext-positioning.zh-en.md), [organization/mechanism overview](framework-overview.zh-en.md), [current evaluator quick start](../README.md#quick-start) and [participation guide](discussion-guide.md). Existing v0.1 material remains historical, local-only and mock-only.
 
-## Governance Surfaces / 治理界面
-
-**English**: TBAO uses three connected surfaces: **Knowledge Governance**, **Advisory Governance**, and **Action Governance**.
-
-**中文**：TBAO 使用三个相互连接的治理界面：**知识治理**、**顾问治理**、**行动治理**。
-
-## Current Status / 当前状态
-
-**English**: v0.1 is a public draft. It includes a conceptual framework, governance spine, and mock-only Action Spine demo. It is not production-ready and includes no runtime execution, no live API, no scheduler, no worker, no real credentials, no real file writes, no real funds, and no external side effects.
-
-**中文**：v0.1 是公开草稿，包含概念框架、治理脊柱和仅模拟的 Action Spine 演示。它尚非生产可用，不包含运行时执行、实时 API、调度器、worker、真实密钥、真实文件写入、真实资金或外部副作用。
-
-## Who This Is For / 适合谁
-
-**English**: AI agent builders, governance researchers, open-source tool designers, organizations exploring safe agent adoption, and individuals building personal AI workspaces.
-
-**中文**：适合 AI Agent 构建者、治理研究者、开源工具设计者、探索安全 Agent 采用的组织，以及构建个人 AI 工作空间的个人。
-
-## What This Is Not / TBAO 不是什么
-
-**English**: TBAO is not a production runtime, not a general agent framework, not a content moderation system, not a claim that AI has conscience, and not a substitute for human responsibility, law, or institutional governance.
-
-**中文**：TBAO 不是生产运行时，不是通用 Agent 框架，不是内容审核系统，不声称 AI 拥有良知，也不替代人的责任、法律或组织治理。
-
-## Current Roadmap / 当前路线图
-
-**English**
-
-- Phase 1: completed collaboration baseline and static mock.
-- Phase 2: public narrative and README framing.
-- Phase 3: Action Spine static demo.
-- Phase 4: public release packaging.
-
-**中文**
-
-- Phase 1：已完成协作基线和静态模拟。
-- Phase 2：公共叙事和 README framing。
-- Phase 3：Action Spine 静态演示。
-- Phase 4：公开发布打包。
-
-## Final Test / 最终测试
-
-**English**
-
-```text
-Does it protect human meaning sovereignty?
-Does it preserve provenance, boundaries, and confirmation status?
-Does it make judgment-shaping advice reviewable and downgradeable?
-Does it make side-effectful action decidable, traceable, and recoverable?
-```
-
-**中文**
-
-```text
-它是否保护人的意义主权？
-它是否保留来源、边界和确认状态？
-它是否让影响判断的建议可审查、可降级？
-它是否让有外部副作用的行动可裁决、可追踪、可恢复？
-```
-
-**English**: Better agents do not only need more capability. They need trustworthy boundaries.
-
-**中文**：更好的 Agent 不只需要更强能力，也需要可信边界。
+继续阅读 [vNext 统一定位与五个泛化实践案例](vnext-positioning.zh-en.md)、[组织与机制概览](framework-overview.zh-en.md)、[当前评估器快速开始](../README.zh-CN.md#快速开始)和[参与指南](discussion-guide.md)。现有 v0.1 材料保留为历史、本地模拟参考。

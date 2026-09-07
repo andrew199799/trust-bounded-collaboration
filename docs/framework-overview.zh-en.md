@@ -1,88 +1,38 @@
-# TBAO Framework Overview / TBAO 框架概览
+# TBC organization and mechanisms / TBC 组织与机制概览
 
-## What The Framework Is / 框架是什么
+The [canonical vNext positioning](vnext-positioning.zh-en.md) defines TBC as an open practice and reference project for AI-native Individual Organizations: one Human and multiple AI agents working together over time. This overview connects that purpose to the existing code; it does not specify a new runtime.
 
-**English**: Trust-Bounded Agent OS (TBAO) is a public framework for keeping AI agent behavior bounded before it affects durable state, external systems, human judgment, or responsibility trails. It protects human meaning sovereignty and does not restrict intelligence growth; it restricts uncontrolled agent power.
+[vNext 统一定位](vnext-positioning.zh-en.md)将 TBC 定义为面向 AI-native Individual Organization 的开放实践与参考项目：一个 Human 与多个 AI Agent 长期协作。本概览说明这一目的与现有代码的关系，不定义新的运行时。
 
-**中文**：Trust-Bounded Agent OS（TBAO）是一个公开框架，用于在 AI Agent 影响长期状态、外部系统、人类判断或责任线索前保持边界。它保护人的意义主权，不限制智能生长，只限制失控的 Agent 权力。
-
-## Three Governance Surfaces / 三类治理界面
-
-**English**: TBAO is organized around three connected surfaces:
-
-- **Knowledge Governance** preserves provenance, boundaries, confirmation status, and actionability of human knowledge.
-- **Advisory Governance** makes judgment-shaping advice source-grounded, challengeable, verifiable, and downgradeable.
-- **Action Governance** makes side-effectful action structured, risk-tiered, confirmable, traceable, and recoverable.
-
-**中文**：TBAO 围绕三类相互连接的治理界面组织：
-
-- **知识治理**：保留人的知识来源、边界、确认状态和可行动性。
-- **顾问治理**：让影响判断的建议可溯源、可质疑、可校验、可降级。
-- **行动治理**：让有外部副作用的行动结构化、风险分级、可确认、可追踪、可恢复。
-
-## Action Spine As The First Demo Cut / Action Spine 作为第一演示切口
-
-**English**: The current implementation focus is **Action Spine**, a minimal proposal structure for inspecting agent action before execution.
-
-**中文**：当前实现焦点是 **Action Spine / 行动脊柱**，即在执行前检查 Agent 行动的最小提案结构。
+## Four layers / 四层关系
 
 ```text
-intent
-  -> proposed_action
-  -> risk_tier
-  -> required_confirmation
-  -> execution_status
-  -> audit_note
+Human Meaning / 人的意义
+→ Human-AI Organizational Layer / 人与 AI 的组织协作层
+→ Executable Mechanisms / 可执行机制
+→ Platform Floor / 平台地板
 ```
 
-**English**: v0.1 is mock-only. It has no execution, no runtime, no live API, no credentials, no real file writes, and no external side effects.
+The Human decides what matters and which outcomes and consequences are acceptable. The organizational layer concerns division of work, coordination, authority, correction and shared learning. Executable mechanisms solidify a recurring principle where useful. Mature platform capabilities supply the infrastructure; use them directly whenever sufficient. The arrows express purpose and support, not an execution pipeline.
 
-**中文**：v0.1 仅模拟；没有执行、没有运行时、没有实时 API、没有密钥、没有真实文件写入，也没有外部副作用。
+Human 决定什么值得做、哪些结果与后果可以接受。组织协作层关注分工、协调、授权、纠偏与共同学习。可执行机制在有用之处固化反复出现的原则。基础设施由成熟平台能力提供，足够解决问题时就直接复用。箭头表示目的与支撑关系，不是执行流水线。
 
-## How To Read The Repository / 如何阅读仓库
+## Where the evaluator fits / 评估器的位置
 
-**English**: Recommended reading path:
+Authorization drift is one concrete organizational failure: action B inherits the apparent approval of action A. The current `1.0.0` library compares one proposed action with host-verified authority, policy and evidence bindings, returning ALLOW/DENY and an unsigned deterministic receipt with `executed=false`.
 
-1. [`README.md`](../README.md)
-2. [`docs/one-page-summary.zh-en.md`](one-page-summary.zh-en.md)
-3. [`docs/framework-overview.zh-en.md`](framework-overview.zh-en.md)
-4. [`docs/principles.zh-en.md`](principles.zh-en.md)
-5. [`docs/action-spine-mvp.zh-en.md`](action-spine-mvp.zh-en.md)
-6. [`docs/non-goals.zh-en.md`](non-goals.zh-en.md)
-7. [`docs/development-log/action-spine-static-mock-example.md`](development-log/action-spine-static-mock-example.md)
+授权漂移是一类具体的组织失败：动作 B 看似继承了动作 A 的批准。当前 `1.0.0` 库将一个拟执行动作与宿主验证的授权、策略、证据绑定进行比较，返回 ALLOW／DENY 和带有 `executed=false` 的确定性未签名回执。
 
-**中文**：建议按以上顺序阅读：先看项目首页和一页摘要，再看框架概览、原则、Action Spine MVP、非目标，最后看静态模拟提案示例。
+The host authenticates, verifies facts and policy, rechecks reality and enforces decisions using its existing platform. TBC does not collect approvals, own project intent, execute actions, maintain organizational memory or automatically correct/reroute Agents. A product outcome still needs Human acceptance even when technical checks pass. See the [capability disposition](capability-disposition.md) for precise current boundaries.
 
-## Current Boundary / 当前边界
+宿主通过已有平台负责认证、事实与策略验证、现实复核及执行控制。TBC 不收集批准、不拥有项目意图、不执行动作、不维护组织记忆，也不自动纠偏或重新分派 Agent。即使技术检查通过，产品结果仍需要人的验收。确切的当前边界见[能力归属说明](capability-disposition.md)。
 
-**English**: TBAO v0.1 is a public draft and non-production demo. It is local-only, mock-only, non-executing, and has no real credentials, no real funds, and no real external side effects.
+## How to evolve / 如何演进
 
-**中文**：TBAO v0.1 是公开草稿和非生产演示。它仅本地、仅模拟、不执行，不使用真实密钥，不涉及真实资金，也不产生真实外部副作用。
+Begin with a real failure and a reusable principle, check whether mature platform capabilities already solve it, add the smallest executable boundary only if a gap remains, then test the idea again in real work. Counterexamples and evidence that a mechanism is unnecessary are welcome. This is exploration, not a universally validated organizational framework or a platform roadmap.
 
-## What Comes Next / 下一步
+从真实失败和可复用原则出发，先检查成熟平台是否已经解决问题；仍有缺口才增加最小可执行边界，再回到真实工作检验。欢迎反例，以及说明某个机制并无必要的证据。这是探索，不是经过普遍验证的组织框架，也不是平台建设路线图。
 
-**English**: Phase 2 improves public narrative and navigation. Later phases may refine the static Action Spine demo and public release packaging, while preserving the non-production safety boundary unless a human explicitly approves a new scope.
+Start with the [five sanitized field cases and reuse map](vnext-positioning.zh-en.md), then the [offline executable examples](../examples/README.md) and [non-goals](non-goals.zh-en.md). The earlier [v0.1 principles](principles.zh-en.md) and [Action Spine specification](action-spine-mvp.zh-en.md) remain historical reference material, not the current public API or a requirement to build every proposed component.
 
-**中文**：Phase 2 改进公共叙事和导航。后续阶段可以完善静态 Action Spine 演示和公开发布打包，但在人工明确批准新范围前，必须保留非生产安全边界。
-
-## Final Test / 最终测试
-
-**English**: Every future addition must answer:
-
-```text
-Does it protect human meaning sovereignty?
-Does it preserve provenance, boundaries, and confirmation status?
-Does it make judgment-shaping advice reviewable and downgradeable?
-Does it make side-effectful action decidable, traceable, and recoverable?
-```
-
-**中文**：每一项未来新增内容都必须回答：
-
-```text
-它是否保护人的意义主权？
-它是否保留来源、边界和确认状态？
-它是否让影响判断的建议可审查、可降级？
-它是否让有外部副作用的行动可裁决、可追踪、可恢复？
-```
-
-If not, it should not enter the TBAO main line.
+建议先看[五个脱敏实践案例与复用能力图](vnext-positioning.zh-en.md)，再看[离线可执行示例](../examples/README.md)和[非目标](non-goals.zh-en.md)。早期 [v0.1 原则](principles.zh-en.md)与 [Action Spine 规格](action-spine-mvp.zh-en.md)保留为历史参考，不代表当前公开 API，也不要求实现其中每个拟议组件。

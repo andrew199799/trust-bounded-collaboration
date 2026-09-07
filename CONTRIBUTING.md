@@ -2,6 +2,19 @@
 
 Human and AI-assisted contributions are welcome. The canonical project is [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration). Human maintainers decide what to merge and release.
 
+## Contribute organizational practice
+
+Practitioners building one-Human + multiple-AI organizations are welcome to share
+real cases, failure modes, counterexamples, existing platform solutions and alternative
+organizational mechanisms in [GitHub Issues](https://github.com/andrew199799/trust-bounded-collaboration/issues).
+Use the [discussion guide](docs/discussion-guide.md) and [vNext positioning](docs/vnext-positioning.zh-en.md)
+to describe the problem and evidence without private details. Code is useful where a
+recurring problem needs an executable boundary after mature platform reuse has been considered.
+
+欢迎构建“一个 Human + 多个 AI”组织的实践者，通过现有 Issues 贡献真实案例、失败模式、反例、
+成熟平台已解决问题的经验，以及其他组织机制。请参照讨论指南和 vNext 定位，说明问题与证据，
+不公开私有细节；先考虑复用成熟平台，确有必要时再用代码固化反复出现的问题边界。
+
 ## Fork, branch, test, PR
 
 1. Discuss substantial changes in a public Issue first. Keep each PR focused on one problem.

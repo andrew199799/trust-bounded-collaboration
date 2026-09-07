@@ -1,38 +1,57 @@
 # Trust-Bounded Collaboration
 
-TBC is a lightweight, code-first foundation for keeping Human–AI collaboration in
-complex systems **bounded, observable and correctable**, even when models and Agents
-are imperfect.
-
 [简体中文](README.zh-CN.md)
 
-**AI does not have to be perfect. Collaboration needs boundaries.**
+**One Human. Multiple AIs. Real work. Human meaning stays in command.**
 
-## Why TBC exists
+**Trust-Bounded Collaboration (TBC) is an open practice and reference project for AI-native Individual Organizations.**
 
-Human–AI collaboration cannot assume perfect understanding or execution. Different
-models and Agents can misunderstand intent, hallucinate or behave differently as
-context, tools, environment, service quality and available compute change. Those
-uncertainties cannot be fully eliminated.
+TBC explores how one person and multiple AI agents can operate as a real, long-lived working organization — across research, product, engineering, testing, release and operations — without letting growing AI capability silently take over Human goals, judgment or consequence authority.
 
-TBC's goal is to limit how far uncertainty and deviation can propagate into
-uncontrolled consequences. It gives Humans and the adopting application (the
-**host**) explicit checkpoints for reviewing proposed actions, stopping unsupported
-steps and trying again with revised facts or scope:
+**We treat powerful AI platforms as the floor, not the ceiling.**
 
-- **Bounded:** the host can hold a consequential step when its authorization or
-  required supporting facts are missing, stale, mismatched or negative.
-- **Observable:** reproducible receipts make evaluation decisions and denial reasons
-  inspectable; the Human/host still checks what is happening in the real system.
-- **Correctable:** Humans and host logic can revise a proposal, gather evidence or
-  re-scope work, then evaluate the next bounded action. Unrelated authorized work
-  can remain independently evaluable.
+We reuse mature models, runtimes, policy systems, cloud services and tools whenever they already solve the problem. TBC focuses on what remains above that floor: Human meaning, collaboration structure, authority, coordination, correction and learning.
 
-This applies to Agent proposals, multi-agent work, CI gates, approval systems and
-release decisions. TBC grew out of repeated real Human–AI engineering practice.
-Its public code, conformance tests and runnable examples define what the current
-implementation demonstrates; this is not a claim of universal validation or
-production guarantees.
+This project comes from real Human-AI project practice, not a speculative framework. Its executable components are reference mechanisms extracted from those experiences.
+The current exact-action authority / policy / evidence evaluator is one such executable mechanism. **It is not the whole project, and it is not the reason TBC ultimately exists.**
+
+Read the [vNext positioning, capability map and five field cases](https://github.com/andrew199799/trust-bounded-collaboration/blob/main/docs/vnext-positioning.zh-en.md), or try the [1.0 evaluator](#quick-start).
+
+## What this organization is for
+
+An AI-native Individual Organization is one Human working with multiple AI agents over time to perform work that traditionally required a small team across research, product, design, engineering, testing, release and operations.
+It involves ongoing goals, division of work, handoffs, correction and shared learning, beyond simply using several AI tools. The Human defines success and retains final responsibility.
+
+**What does the Human actually want? What counts as a correct outcome? How should Humans and AIs divide work, coordinate, authorize actions, recover from mistakes and learn together? As AI gains more cognitive and execution power, how do we keep that power aligned with Human meaning rather than allowing technical capability to redefine the goal?**
+
+**Human meaning sovereignty means that AI may greatly expand cognition and execution, but the Human remains the authority for what matters, why it matters, what outcome is acceptable, and which consequences are worth taking.**
+
+**Human-in-command, not Human-in-every-loop.** Authorized work can proceed without asking the Human to perform or approve every step. Changes to the goal or consequential scope return to the appropriate authority; local technical success cannot silently redefine the real goal.
+Shared learning and organizational memory preserve decisions, corrections and their limits using existing tools; they do not turn an Agent's inference into a Human decision.
+
+**Large platforms provide capability; Humans retain meaning.**
+
+TBC does not compete with foundation models, Agent runtimes or orchestration, HITL UI or pause/resume, IAM or OAuth, policy engines, cloud, browser, memory or tool infrastructure, general SDLC or universal governance platforms. These are the platform floor to reuse.
+
+**TBC is not trying to become the platform beneath every Human-AI organization. It is trying to understand and improve how those organizations actually work on top of increasingly capable platforms.**
+
+## From real work to a small mechanism
+
+TBC grows from real Human-AI project practice. We extract collaboration problems that repeatedly appear in real work, turn validated principles into public cases and mechanisms, and implement code only where executable boundaries materially help.
+Here, validation is bounded by the available practice and evidence; it is not universal validation or a production guarantee.
+
+```text
+real collaboration failure
+→ reusable collaboration problem
+→ reusable principle
+→ reuse existing platform capability where sufficient
+→ otherwise add the smallest executable boundary
+→ return to real project use for validation
+```
+
+One recurring failure was authorization drift: a Human approved action A, but the Agent later prepared action B while earlier approval still appeared valid. TBC 1.0 turned that collaboration principle into a deterministic exact-action binding mechanism.
+
+This is one example of how TBC works: **real collaboration failure → reusable principle → executable boundary where useful.** The host (the adopting application) verifies facts and enforces decisions. The evaluator does not determine whether the product meets the Human's real goal.
 
 ## Make collaboration drift observable
 
@@ -86,7 +105,7 @@ mismatch persists, route it to a better-suited Agent instead of blindly retrying
 These are Human/host correction choices: Core keeps no retry history, scores no
 Agent capability and does not automatically select another Agent.
 
-## The 1.0 executable foundation
+## The 1.0 evaluator mechanism
 
 Current 1.0 implements that checkpoint as a small Python library that checks
 whether verified authority, policy and evidence apply to **one exact proposed
@@ -213,13 +232,13 @@ The first-run check reports elapsed time against a ten-minute target.
 
 ## Project status, feedback and participation
 
-The repository contract is **`1.0.0`**. The reviewed foundation and four runnable
+The positioning direction is **vNext**; the executable repository contract remains **`1.0.0`**. The reviewed foundation and four runnable
 use cases are merged on `main`. Tagging, GitHub Release and package publication are
 separate Human-controlled steps. This version does not claim production readiness
 for every adopting project. Historical `src/tbao/`, its tests and v0.1 docs
 remain reference material outside the current distribution/API.
 
-Help improve TBC with concrete adoption experience:
+Practitioners building one-Human + multiple-AI organizations are invited to contribute real cases, failure modes, counterexamples, places where mature platforms already solve a TBC problem, and alternative organizational mechanisms through the existing repository:
 
 - Share real-world collaboration failures, hard-to-express boundaries, missing
   observability, adoption friction and extension ideas in [GitHub Issues](https://github.com/andrew199799/trust-bounded-collaboration/issues), using public-safe examples.
@@ -235,3 +254,7 @@ no third-party code and has no third-party runtime dependencies; contributions m
 preserve applicable attribution and license obligations. Built by Andrew with
 ChatGPT and Codex as AI engineering collaborators. AI attribution does not imply
 copyright ownership or organizational endorsement.
+
+TBC's broader goal is **to help one Human use increasingly capable AI systems to achieve the effective capacity of a small organization while preserving Human meaning, judgment, authority and responsibility.**
+
+**AI is raising the floor of what one person can do. TBC explores how Humans can use that rising floor to build richer, more capable and more individual organizations — without surrendering the meaning that makes those organizations worth building.**
