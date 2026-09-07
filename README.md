@@ -213,10 +213,11 @@ The first-run check reports elapsed time against a ten-minute target.
 
 ## Project status, feedback and participation
 
-Development version: **`1.0.0a1`**. The reviewed foundation and four runnable use cases
-are merged on `main`; this is pre-freeze publication preparation, not a production
-readiness claim. No tagged release or package publication is announced. Historical
-`src/tbao/`, its tests and v0.1 docs remain reference material outside the current distribution/API.
+Repository contract prepared for **`1.0.0`**. The reviewed foundation and four runnable
+use cases are merged on `main`. Tag, GitHub Release and package publication remain
+pending Human release authorization. This candidate does not claim production
+readiness for every adopting project. Historical `src/tbao/`, its tests and v0.1 docs
+remain reference material outside the current distribution/API.
 
 Help improve TBC with concrete adoption experience:
 

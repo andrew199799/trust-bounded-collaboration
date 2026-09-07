@@ -17,6 +17,8 @@ def assert_python_range(metadata):
     assert {part.strip() for part in values[0].split(",")} == {">=3.11", "<3.15"}, values[0]
 
 
+EXPECTED_VERSION = "1.0.0"
+
 CURRENT_EXAMPLES = (
     "tbc_integration.py", "approval_bound_action.py",
     "evidence_bound_transition.py", "scoped_blocker.py",
@@ -35,7 +37,8 @@ with zipfile.ZipFile(wheel) as archive:
     assert_python_range(metadata)
     assert "License-Expression: MIT" in metadata
     assert "Requires-Dist:" not in metadata
-    assert Parser().parsestr(metadata)["Version"] == "1.0.0a1"
+    assert Parser().parsestr(metadata)["Version"] == EXPECTED_VERSION
+    assert "Development Status :: 5 - Production/Stable" in Parser().parsestr(metadata).get_all("Classifier", [])
 source_examples = {}
 with tarfile.open(sdist) as archive:
     names = archive.getnames()
@@ -49,7 +52,7 @@ with tarfile.open(sdist) as archive:
     for name, other in (("README.md", "README.zh-CN.md"), ("README.zh-CN.md", "README.md")):
         readme = archive.extractfile(relative[name]).read().decode("utf-8")
         assert "](" + other + ")" in readme
-        assert "`1.0.0a1`" in readme
+        assert "`" + EXPECTED_VERSION + "`" in readme
     expected_examples = {"examples/README.md", *("examples/" + n for n in CURRENT_EXAMPLES)}
     assert {n for n in relative if n.startswith("examples/")} == expected_examples
     assert "tests/test_tbc_examples.py" in relative
@@ -58,7 +61,9 @@ with tarfile.open(sdist) as archive:
         assert data == (root / "examples" / name).read_bytes()
         source_examples[name] = data
     metadata_name, = [n for n in names if n.split("/", 1)[-1] == "PKG-INFO"]
-    assert_python_range(archive.extractfile(metadata_name).read().decode())
+    source_metadata = archive.extractfile(metadata_name).read().decode()
+    assert_python_range(source_metadata)
+    assert Parser().parsestr(source_metadata)["Version"] == EXPECTED_VERSION
 
 started = time.monotonic()
 with tempfile.TemporaryDirectory() as temp:
@@ -71,7 +76,14 @@ with tempfile.TemporaryDirectory() as temp:
     assert json.loads(result)["simulation"] is True
     command = bindir / ("tbc.exe" if os.name == "nt" else "tbc")
     assert subprocess.check_output([str(command), "demo", "repository", "--json"], cwd=temp, text=True) == result
-    probe = "import importlib.util; assert importlib.util.find_spec('tbao') is None"
+    assert subprocess.check_output([str(command), "--version"], cwd=temp, text=True).strip() == EXPECTED_VERSION
+    assert subprocess.check_output([str(python), "-I", "-m", "tbc", "--version"], cwd=temp, text=True).strip() == EXPECTED_VERSION
+    probe = (
+        "import importlib.metadata; import importlib.util; import tbc; "
+        "assert importlib.util.find_spec('tbao') is None; "
+        "assert importlib.metadata.version('trust-bounded-collaboration') == "
+        f"tbc.__version__ == {EXPECTED_VERSION!r}"
+    )
     subprocess.run([str(python), "-I", "-c", probe], cwd=temp, check=True, capture_output=True)
     # Run the exact scripts shipped in the sdist against only the installed wheel,
     # from outside the checkout. -I excludes checkout/PYTHONPATH import leakage.
@@ -90,4 +102,4 @@ with tempfile.TemporaryDirectory() as temp:
             assert all(r["executed"] is False for r in result["cases"].values())
 elapsed = time.monotonic() - started
 assert elapsed < 600
-print(json.dumps({"wheel_contents": "PASS", "sdist_contents": "PASS", "clean_install": "PASS", "current_examples": len(CURRENT_EXAMPLES), "first_run_seconds": round(elapsed, 3)}))
+print(json.dumps({"wheel_contents": "PASS", "version": EXPECTED_VERSION, "sdist_contents": "PASS", "clean_install": "PASS", "current_examples": len(CURRENT_EXAMPLES), "first_run_seconds": round(elapsed, 3)}))
