@@ -8,13 +8,13 @@
 
 TBC explores how one person and multiple AI agents can operate as a real, long-lived working organization — across research, product, engineering, testing, release and operations — without letting growing AI capability silently take over Human goals, judgment or consequence authority.
 
-Its long-term mission is to help Humans discover and create what is worth doing, carry forward useful experience, and revise goals when evidence calls for it. AI collaborators should be able to question assumptions, create, research and execute with intellectual independence. The Human or accountable organization decides consequential goals, tradeoffs and authorization; disagreement and negative evidence should remain visible rather than be smoothed into agreement.
+Its long-term mission is to help Humans discover and create what is worth doing, carry forward useful experience, and revise goals when evidence calls for it. AI collaborators can independently challenge assumptions, form judgments, create, research and execute; their judgments can inform decisions without taking over the decision authority. Consequential goals, important tradeoffs and real-world outcomes remain the responsibility of the authorized Human or accountable organization. Disagreement and negative evidence should remain visible rather than be smoothed into agreement.
 
 **We treat powerful AI platforms as the floor, not the ceiling.**
 
 We reuse mature models, runtimes, policy systems, cloud services and tools whenever they already solve the problem. TBC focuses on what remains above that floor: Human meaning, collaboration structure, authority, coordination, correction and learning.
 
-Collaborative software-product development is TBC's practical starting field: code, versions, tests and review records make some claims inspectable, while product value and Human intent still require Human judgment. This project comes from real Human-AI project practice, not a speculative framework. Its executable components are reference mechanisms extracted from those experiences.
+Collaborative software-product development is TBC's practical starting field: code, versions, tests and review records make some claims inspectable, but cannot automatically prove user value or reconstruct Human intent. Those judgments require accountable Human interpretation and, where needed, evidence from actual users and outcomes. This project comes from real Human-AI project practice, not a speculative framework. Its executable components are reference mechanisms extracted from those experiences.
 The current exact-action authority / policy / evidence evaluator is one such executable mechanism. **It is not the whole project, and it is not the reason TBC ultimately exists.**
 
 Whether collaboration knowledge can remain useful across changing models, vendors, runtimes and languages is a research direction, not an implemented portability feature.
