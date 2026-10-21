@@ -8,13 +8,22 @@
 
 TBC explores how one person and multiple AI agents can operate as a real, long-lived working organization — across research, product, engineering, testing, release and operations — without letting growing AI capability silently take over Human goals, judgment or consequence authority.
 
-Its long-term mission is to help Humans discover and create what is worth doing, carry forward useful experience, and revise goals when evidence calls for it. AI collaborators can independently challenge assumptions, form judgments, create, research and execute; their judgments can inform decisions without taking over the decision authority. Consequential goals, important tradeoffs and real-world outcomes remain the responsibility of the authorized Human or accountable organization. Disagreement and negative evidence should remain visible rather than be smoothed into agreement.
+Models will change. Agents will evolve. Workflows carefully designed today may become ordinary platform capabilities tomorrow.
 
-**We treat powerful AI platforms as the floor, not the ceiling.**
+TBC is concerned with a more enduring question: **As AI takes on more of the work, can Humans continue to grow through collaboration? Can knowledge, experience, judgment, and even past mistakes be understood, carried forward, and revised rather than repeatedly lost as technology changes?**
 
-We reuse mature models, runtimes, policy systems, cloud services and tools whenever they already solve the problem. TBC focuses on what remains above that floor: Human meaning, collaboration structure, authority, coordination, correction and learning.
+We explore a long-term relationship in which Humans continue to create, preserve, and renew meaning: deciding what is worth pursuing, why it matters, and which real-world consequences they are prepared to own—while remaining willing to reconsider even their deeply held judgments when new evidence emerges. AI participates as an intellectually independent partner capable of questioning, creating, reasoning, and executing. It can expand Human understanding and agency, reveal blind spots, test assumptions, and challenge even the original goal.
 
-Collaborative software-product development is TBC's practical starting field: code, versions, tests and review records make some claims inspectable, but cannot automatically prove user value or reconstruct Human intent. Those judgments require accountable Human interpretation and, where needed, evidence from actual users and outcomes. This project comes from real Human-AI project practice, not a speculative framework. Its executable components are reference mechanisms extracted from those experiences.
+Such collaboration requires clear boundaries of authority and accountability, alongside durable records of important decisions, their reasoning, disagreements, failures, and corrections. We want this accumulated understanding to remain useful, wherever feasible, across changes in models, platforms, and tools—so that each new generation of AI can build upon what Humans and AIs have already learned together.
+
+We begin with collaborative software-product development.
+
+Code, versions, tests, and execution records allow parts of AI-assisted work to be checked automatically and errors to be traced. Yet those technical signals cannot, by themselves, establish whether a product delivers real user value or whether the original Human intent has been understood.
+
+We use this relatively observable digital setting to discover real collaboration failures and test reusable principles. Mature platform capabilities come first; minimal executable mechanisms are considered only when recurring, evidenced gaps remain unresolved.
+
+This is both TBC's practical starting point and its current boundary. Whether these lessons apply to broader real-world work remains a question for further field validation.
+
 The current exact-action authority / policy / evidence evaluator is one such executable mechanism. **It is not the whole project, and it is not the reason TBC ultimately exists.**
 
 Whether collaboration knowledge can remain useful across changing models, vendors, runtimes and languages is a research direction, not an implemented portability feature.
