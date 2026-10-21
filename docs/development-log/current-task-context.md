@@ -2,29 +2,16 @@
 
 Canonical repository: [andrew199799/trust-bounded-collaboration](https://github.com/andrew199799/trust-bounded-collaboration).
 
-Current task: [TBC vNext positioning and public narrative (#38)](https://github.com/andrew199799/trust-bounded-collaboration/issues/38).
-Read the latest Human instructions and the authoritative wording comment on that Issue.
-The current authorization supersedes the earlier release-transition task notes.
+This file preserves task continuity, not standing authorization or a permanent claim that any Issue or PR remains open. On every task resumption, read the current Human instructions, check the live GitHub Issue and PR states, and follow `AGENTS.md` before treating earlier notes as active work. Refresh canonical `main` and verify its exact SHA, repository and fork identities, effective permissions, contributor branch, and PR head before a write.
 
-Canonical main baseline refreshed before branching:
-`a51fb965e30af375502a73a11b09b9c11071dce6`.
-Executor: Codex / `yanxi1024-git`, using an isolated contributor clone and one task
-branch, `docs/issue-38-vnext-positioning`. API and SSH identities match that account;
-canonical permissions are read-only and the contributor fork has write access.
-Commit attribution uses the Agent account's GitHub noreply identity.
+## Positioning history
 
-Scope: bilingual first-screen positioning for AI-native Individual Organizations,
-one compact canonical positioning document with five sanitized generalized cases
-and a reuse-first map, and reconciliation of conflicting current public entry docs.
-Preserve the Human's core formulations. Keep historical/reference material intact
-apart from scoped public-reference sanitation and an explicit historical reading boundary.
+[Issue #38](https://github.com/andrew199799/trust-bounded-collaboration/issues/38) and its vNext positioning work are completed history. [Issue #40](https://github.com/andrew199799/trust-bounded-collaboration/issues/40) supplied the long-horizon Human–AI collaboration mission clarification, proposed through [Draft PR #42](https://github.com/andrew199799/trust-bounded-collaboration/pull/42) from the contributor branch `yanxi1024-git:docs/issue-40-long-horizon-mission`. These links identify the source of the wording; recheck their current status before continuing any task. The proposal required independent ChatGPT review and a separate Human merge decision.
 
-Use `vNext`; preserve `1.0.0`, API, schemas, behavior, CLI, runtime dependencies,
-examples, tests and distribution contract. Run existing tests, build, clean offline
-distribution checks and `git diff --check`; verify the published PR base, contributor
-head repository/branch and exact head SHA. Keep interim/final validation in the one
-focused PR body. Human/ChatGPT review and Human merge remain separate decisions.
+[Research questions #41](https://github.com/andrew199799/trust-bounded-collaboration/issues/41) were recorded as **HOLD** during the #40 / PR #42 work. Their live state and any later Human authorization must be checked afresh; this record does not authorize research or development from that agenda.
 
-Do not merge, tag, release, publish packages, change permissions, perform external
-outreach, add private material or create a runtime/platform. Prior conditional release
-instructions are not authority to perform release work within this task.
+## Scope carried forward
+
+The #40 wording distinguishes the long-term Human meaning mission, AI's independent questioning and creation, collaborative software-product development as the bounded practical starting field, and the implemented 1.0 evaluator from untested research directions. Code and tests can expose technical facts but cannot automatically prove user value or reconstruct Human intent. Accountable people or organizations retain consequential choices and real-world responsibility.
+
+Keep future changes within their current Human-authorized scope. Preserve the existing 1.0 API, schemas, behavior, tests, examples, distribution and release contract unless separately authorized. Run applicable tests, document/link checks and `git diff --check` for relevant changes. Do not infer authority to merge, tag, release, publish, or write to canonical `main` from this file.

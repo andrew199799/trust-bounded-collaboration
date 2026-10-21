@@ -1,8 +1,8 @@
 # TBC vNext positioning / TBC vNext 定位
 
-This is the canonical vNext positioning document, following [Issue #38 and its Human wording input](https://github.com/andrew199799/trust-bounded-collaboration/issues/38). vNext names a positioning direction; the executable contract remains `1.0.0`.
+This is the canonical vNext positioning document, following [Issue #38 and its Human wording input](https://github.com/andrew199799/trust-bounded-collaboration/issues/38) and the [long-horizon mission clarification in Issue #40](https://github.com/andrew199799/trust-bounded-collaboration/issues/40). vNext names a positioning direction; the executable contract remains `1.0.0`.
 
-本文是 vNext 定位的统一参考，依据 [Issue #38 及其中的 Human 措辞要求](https://github.com/andrew199799/trust-bounded-collaboration/issues/38)。vNext 表示定位方向；可执行契约仍为 `1.0.0`。
+本文是 vNext 定位的统一参考，依据 [Issue #38 及其中的 Human 措辞要求](https://github.com/andrew199799/trust-bounded-collaboration/issues/38) 和 [Issue #40 的长期使命澄清](https://github.com/andrew199799/trust-bounded-collaboration/issues/40)。vNext 表示定位方向；可执行契约仍为 `1.0.0`。
 
 ## An AI-native Individual Organization / AI 原生个人组织
 
@@ -12,13 +12,45 @@ We are exploring an organizational form that is becoming technically real: **one
 
 The organizational part is continuity: a shared goal, division of work, handoffs, authority boundaries, correction and learning over time. Merely opening several AI tools does not establish those relationships. The Human retains judgment and final consequence authority as the organization's capacity grows.
 
+Models will change. Agents will evolve. Workflows carefully designed today may become ordinary platform capabilities tomorrow.
+
+TBC is concerned with a more enduring question: **As AI takes on more of the work, can Humans continue to grow through collaboration? Can knowledge, experience, judgment, and even past mistakes be understood, carried forward, and revised rather than repeatedly lost as technology changes?**
+
+We explore a long-term relationship in which Humans continue to create, preserve, and renew meaning: deciding what is worth pursuing, why it matters, and which real-world consequences they are prepared to own—while remaining willing to reconsider even their deeply held judgments when new evidence emerges. AI participates as an intellectually independent partner capable of questioning, creating, reasoning, and executing. It can expand Human understanding and agency, reveal blind spots, test assumptions, and challenge even the original goal.
+
+Such collaboration requires clear boundaries of authority and accountability, alongside durable records of important decisions, their reasoning, disagreements, failures, and corrections. We want this accumulated understanding to remain useful, wherever feasible, across changes in models, platforms, and tools—so that each new generation of AI can build upon what Humans and AIs have already learned together.
+
 **Trust-Bounded Collaboration（TBC）是一个面向 AI-native Individual Organization 的开放实践与参考项目。**
 
 我们正在探索一个正在变成现实的新型组织：**一个 Human 与多个 AI Agent 长期协作，完成过去往往需要一个小团队承担的研究、产品、设计、工程、测试、发布和运营工作。**
 
 “组织”体现在长期延续的共同目标、分工、交接、权限边界、纠偏与学习上。同时打开几个 AI 工具，并不自动形成这些关系。组织能力增长时，Human 仍保留判断权和最终后果决定权。
 
+模型会更新，Agent 会换代，今天精心设计的工作流，也可能明天就成为平台的基础能力。
+
+TBC 关注一个更长久的问题：**当 AI 能完成越来越多的工作，人能否在协作中持续成长？那些来自真实实践的知识、经验、判断，乃至曾经犯过的错误，能否被理解、传承和修正，成为不随技术更替而轻易流失的积累？**
+
+我们希望探索这样一种长期协作关系：人持续创造、传承和发展意义，决定什么值得追求、为什么值得，以及愿意为此承担怎样的现实后果；同时保有根据新事实重新审视、甚至推翻自身旧判断的能力。AI 则作为能够独立思考、质疑、创造和执行的伙伴，拓展人的认知与行动边界，帮助我们发现盲点，检验假设，必要时挑战最初的目标。
+
+这样的协作，需要清晰的权责边界，也需要让重要决定及其依据、反对意见、失败经验和修正过程得到可靠积累。我们希望这些积累能够尽可能跨越模型、平台与工具的变化，使人与 AI 的长期合作建立在不断深化的认识之上，而无需随着每一代技术更替反复从零开始。
+
 ## Practice basis / 实践基础
+
+We begin with collaborative software-product development.
+
+Code, versions, tests, and execution records allow parts of AI-assisted work to be checked automatically and errors to be traced. Yet those technical signals cannot, by themselves, establish whether a product delivers real user value or whether the original Human intent has been understood.
+
+We use this relatively observable digital setting to discover real collaboration failures and test reusable principles. Mature platform capabilities come first; minimal executable mechanisms are considered only when recurring, evidenced gaps remain unresolved.
+
+This is both TBC's practical starting point and its current boundary. Whether these lessons apply to broader real-world work remains a question for further field validation.
+
+我们先从软件产品联合研发做起。
+
+代码、版本、测试和运行记录，让 AI 的部分工作可以被自动检查，协作中的错误也更容易追溯。但这些技术证据无法自动回答产品是否真正有用、人的意图是否得到准确理解。
+
+因此，我们选择在这个数字化程度较高的实际场景中发现问题、检验原则，优先利用成熟平台已有的能力；只有当真实协作中的缺口反复出现，且现有方法难以有效解决时，才尝试固化最小必要机制。
+
+这既是 TBC 当前的实践起点，也是它的能力边界。未来能否将这些经验用于更广泛的现实工作，需要继续接受不同场景的检验。
 
 In our field practice, one Human and multiple AI collaborators have already worked together across a full real software product lifecycle, from product definition and design through engineering, testing, release and operations. This TBC repository is itself a Human + ChatGPT + Codex collaboration.
 
@@ -57,6 +89,10 @@ Read downward from purpose to supporting capabilities. This is a conceptual map,
 **Human-in-command, not Human-in-every-loop.** A Human can authorize sustained work within clear boundaries. An Agent should carry that work forward, bring material changes to the appropriate decision owner, and avoid converting a convenient technical result into a new product goal. Shared memory should retain the source and scope of decisions, corrections and unresolved assumptions; existing memory tools can store these records, but cannot confer Human authority on an inference.
 
 **Human 掌握最终指挥权，不必身处每一步循环。** Human 可以授权在明确边界内持续工作。Agent 应推进这些工作，将实质变化交回相应决策者，避免把方便实现的技术结果变成新的产品目标。组织记忆应保留决定、纠偏和未决假设的来源与范围；现有记忆工具可以保存记录，却不能让推断自动获得人的授权。
+
+A longer-term research question is whether collaboration assets can preserve provenance, version, authority, counterexamples and corrections well enough to remain useful across changing models, vendors, runtimes and languages. TBC has not implemented or validated such portability; existing records and tools are the present practice.
+
+一个长期研究问题是：协作资产能否保留来源、版本、权威、反例和纠偏，使其在模型、供应商、运行时和语言变化时仍有用。TBC 尚未实现或验证这种可移植性；当前实践依靠现有记录与工具。
 
 ## Reuse first / 优先复用
 
