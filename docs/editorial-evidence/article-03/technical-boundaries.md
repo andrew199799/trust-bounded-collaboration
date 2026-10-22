@@ -1,0 +1,14 @@
+# TBC 1.0 technical boundary for Article 3
+
+Checked against [Chinese README at `3e7a5d5`](https://github.com/andrew199799/trust-bounded-collaboration/blob/3e7a5d574ef9fb44554b528bfd5862c3739f8a7d/README.zh-CN.md), [current core](https://github.com/andrew199799/trust-bounded-collaboration/blob/3e7a5d574ef9fb44554b528bfd5862c3739f8a7d/src/tbc/_core.py), and [vNext positioning](https://github.com/andrew199799/trust-bounded-collaboration/blob/3e7a5d574ef9fb44554b528bfd5862c3739f8a7d/docs/vnext-positioning.zh-en.md).
+
+| Topic | TBC 1.0 checks or returns | Host / Human must supply, verify, or enforce |
+| --- | --- | --- |
+| Exact action | Canonicalizes an action and checks its SHA-256 binding against supplied context, Grant and Policy. An altered action can produce `ACTION_BINDING_MISMATCH` or `POLICY_BINDING_MISMATCH`. | Put decision-relevant target/version details in the action; establish the real intended action and approve the exact version. |
+| Authority | Checks supplied actor identity, Grant binding and validity at the explicit evaluation time. Missing Grant can produce `AUTHORITY_MISSING`. | Authenticate the actor; verify the approver's actual authority and origin of the Grant. Technical credentials alone are not task authorization. |
+| Policy and evidence | Checks that supplied Policy is current, bound and `ALLOW`; then checks required evidence IDs for binding, pass state and currency. | Establish authoritative policy, collect and verify evidence against actual systems; never trust unverified caller-provided facts. |
+| Decision and receipt | Returns a pure `ALLOW`/`DENY` evaluation with reason codes and deterministic, unsigned `tbc.receipt.v1` data. All observed demo receipts have `executed=false`. | Before any real action, recheck target identity, state and timing; handle replay, execute or block the action, and manage output redaction and retention. `ALLOW` alone is not an execution token. |
+| Scope of blockage | Evaluates one proposed transition at a time. A blocked consequential transition can coexist with separately allowed inspection. | Determine whether the other work is truly independent and separately authorized. Stop only the affected transition. |
+| Learning and correction | Exposes bounded mismatch/denial signals for human inspection. | Decide whether to revise task scope, authorization, policy, evidence or agent assignment. The evaluator has no automatic correction engine, memory, scheduler or production executor. |
+
+The four documented examples use synthetic facts and run offline. `1.0.0` is the executable evaluator. vNext's AI-native Individual Organization and cross-model knowledge continuity are positioning/research aims, not capabilities proven by this demo. No production, security certification or independent adoption claim follows from these examples.
